@@ -38,8 +38,22 @@ h1,h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;line-height:1
 .hero h1{font-size:clamp(40px,6.4vw,68px)}
 .hero h1 em{color:var(--rosa)}
 .hero p{font-size:17px;max-width:30em;opacity:.9;margin:18px 0 26px}
-.hero .ph{border-radius:22px;overflow:hidden;aspect-ratio:1/1;box-shadow:0 30px 60px -20px rgba(0,0,0,.55);transform:rotate(1.5deg)}
-.hero .ph img{width:100%;height:100%;object-fit:cover}
+.stage{display:flex;flex-direction:column;align-items:center;gap:14px}
+.deck{position:relative;width:100%;max-width:440px;aspect-ratio:1/1;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.card{position:absolute;inset:0;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 24px 50px -18px rgba(0,0,0,.6);transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .35s;will-change:transform;cursor:grab}
+.card img{width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
+.card.drag{transition:none;cursor:grabbing}
+.card span{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.94);color:var(--vinho2);font-weight:700;font-size:14px;border-radius:999px;padding:6px 12px}
+.dtitle{font-size:clamp(26px,3vw,32px);margin:0;color:#fff}
+.dend{position:absolute;inset:0;border-radius:22px;border:2px dashed rgba(255,255,255,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:24px}
+.dend p{margin:0;font:400 26px/1.15 "Instrument Serif",Georgia,serif;text-wrap:balance}
+.dbtn{background:var(--rosa);color:var(--vinho2);font-weight:700;text-decoration:none;border-radius:12px;padding:0 20px;min-height:48px;display:inline-flex;align-items:center}
+.dagain{background:transparent;border:0;color:#fff;font:600 15px Figtree,sans-serif;text-decoration:underline;cursor:pointer;min-height:44px}
+.deckbar button:disabled{opacity:.3;cursor:default}
+.deckbar{display:flex;align-items:center;gap:12px}
+.deckbar button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;font-size:20px;cursor:pointer}
+.deckbar button:hover{background:rgba(255,255,255,.12)}
+.deckbar small{font-size:14px;opacity:.85}
 .types{display:flex;flex-wrap:wrap;gap:8px}
 .types span{background:rgba(255,255,255,.1);border-radius:12px;padding:10px 14px;font-size:14px;line-height:1.3}
 .types b{display:block;font-size:17px;white-space:nowrap}
@@ -105,7 +119,7 @@ footer p{margin:0;opacity:.85;font-size:15px}
 
 @media(max-width:700px){
 .hero{grid-template-columns:1fr}
-.hero .ph{max-width:340px;justify-self:center;width:80%;order:-1;transform:rotate(1.5deg)}
+.stage{order:-1;justify-self:center;width:84%;max-width:360px}
 .hero{text-align:left}
 .steps{grid-template-columns:1fr}
 }
@@ -124,7 +138,11 @@ footer p{margin:0;opacity:.85;font-size:15px}
       <p>Escolha a estampa, escolha o modelo da caneca e chame no WhatsApp. A gente confirma tudo com você antes de produzir.</p>
       <div class="types" id="types"></div>
     </div>
-    <div class="ph"><img src="img/hero.jpg" alt="Caneca com a frase Eu quero morar no teu abraço" width="800" height="800"></div>
+    <div class="stage">
+      <h2 class="dtitle">Algumas de nossas artes</h2>
+      <div class="deck" id="deck" aria-label="Artes em destaque. Arraste para o lado para ver a próxima." aria-roledescription="carrossel"></div>
+      <div class="deckbar"><button type="button" id="dPrev" aria-label="Arte anterior">‹</button><small id="dCount">Arraste pro lado</small><button type="button" id="dNext" aria-label="Próxima arte">›</button></div>
+    </div>
   </div>
 </header>
 
@@ -284,6 +302,73 @@ filters.addEventListener("click", e => {
   filters.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
   grid.querySelectorAll(".item").forEach(c => c.hidden = !(b.dataset.f === "todas" || c.dataset.col === b.dataset.f));
 });
+
+/* ====== ARTES DO TOPO (arraste tipo Tinder) ====== */
+const DECK = [
+  {img:"img/hero.jpg", nome:"Eu quero morar no teu abraço"},
+  {img:"img/times/flamengo-1.jpg", nome:"Flamengo"},
+  {img:"img/cafe1.jpg", nome:"Preciso é de café"},
+  {img:"img/amor1.jpg", nome:"Amor para a vida toda"},
+  {img:"img/times/palmeiras-1.jpg", nome:"Palmeiras"},
+  {img:"img/cafe5.jpg", nome:"Expectativa e realidade"},
+  {img:"img/times/corinthians-1.jpg", nome:"Corinthians"},
+  {img:"img/amor5.jpg", nome:"Minha metade"},
+  {img:"img/natal4.jpg", nome:"Brinde Dourado"}
+];
+const deck = document.getElementById("deck");
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let cur = 0;
+deck.innerHTML = `<div class="dend"><p>Gostou? Tem muito mais no catálogo.</p><a href="#catalogo" class="dbtn">Ver todas as canecas</a><button type="button" class="dagain" id="dAgain">Ver de novo</button></div>` +
+  DECK.map((d, i) => `<div class="card" data-i="${i}"><img src="${d.img}" alt="Caneca ${esc(d.nome)}" draggable="false"${i > 2 ? ' loading="lazy"' : ""}><span>${esc(d.nome)}</span></div>`).join("");
+const cards = [...deck.querySelectorAll(".card")];
+const tilt = [0, -4, 4, -2];
+const count = document.getElementById("dCount");
+const layout = () => {
+  cards.forEach((c, i) => {
+    const pos = i - cur;
+    c.classList.remove("drag");
+    c.style.zIndex = DECK.length - i + 1;
+    c.setAttribute("aria-hidden", pos !== 0);
+    if (pos < 0) { c.style.transform = `translateX(${(c.dataset.dir || 1) * 130}%) rotate(${(c.dataset.dir || 1) * 22}deg)`; c.style.opacity = 0; c.style.pointerEvents = "none"; return; }
+    c.style.pointerEvents = pos === 0 ? "auto" : "none";
+    c.style.opacity = pos < 3 ? 1 : 0;
+    c.style.transform = pos === 0 ? "none" : `translateY(${pos * 10}px) scale(${1 - pos * .05}) rotate(${tilt[pos] || 0}deg)`;
+  });
+  count.textContent = cur < DECK.length ? `${cur + 1} de ${DECK.length} · arraste pro lado` : "Fim das artes em destaque";
+  document.getElementById("dPrev").disabled = cur === 0;
+  document.getElementById("dNext").disabled = cur >= DECK.length;
+};
+layout();
+const fling = dir => { if (cur >= DECK.length) return; cards[cur].dataset.dir = dir; cur++; layout(); };
+const back = () => { if (cur > 0) { cur--; layout(); } };
+document.getElementById("dAgain").addEventListener("click", () => { cur = 0; layout(); });
+let sx = 0, sy = 0, dx = 0, dragging = false, decided = false, horiz = false;
+deck.addEventListener("pointerdown", e => {
+  if (!e.target.closest(".card") || cur >= DECK.length) return;
+  sx = e.clientX; sy = e.clientY; dx = 0; dragging = true; decided = false; horiz = false;
+});
+deck.addEventListener("pointermove", e => {
+  if (!dragging) return;
+  const mx = e.clientX - sx, my = e.clientY - sy;
+  if (!decided && Math.hypot(mx, my) > 6) { decided = true; horiz = Math.abs(mx) > Math.abs(my); if (horiz) { try { deck.setPointerCapture(e.pointerId); } catch (_) {} } }
+  if (!horiz) return;
+  dx = mx;
+  const top = cards[cur]; if (!top) return;
+  top.classList.add("drag");
+  top.style.transform = `translateX(${dx}px) rotate(${dx / 18}deg)`;
+});
+const end = () => {
+  if (!dragging) return; dragging = false;
+  const top = cards[cur]; if (!top) return;
+  if (horiz && Math.abs(dx) > deck.clientWidth * .25) fling(Math.sign(dx));
+  else { top.classList.remove("drag"); top.style.transform = "none"; }
+};
+deck.addEventListener("pointerup", end);
+deck.addEventListener("pointercancel", end);
+document.getElementById("dNext").addEventListener("click", () => fling(1));
+document.getElementById("dPrev").addEventListener("click", back);
+deck.tabIndex = 0;
+deck.addEventListener("keydown", e => { if (e.key === "ArrowRight") fling(1); if (e.key === "ArrowLeft") back(); });
 }
 </script>
 </body>
