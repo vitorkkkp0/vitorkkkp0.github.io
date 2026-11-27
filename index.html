@@ -70,6 +70,9 @@ h1,h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;line-height:1
 .opts{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
 .opts button{font:500 14px Figtree,sans-serif;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:10px;padding:0 12px;min-height:40px;cursor:pointer}
 .opts button[aria-pressed=true]{border-color:var(--vinho);background:var(--rosa-claro);color:var(--vinho2);font-weight:700}
+.vers{display:flex;flex-wrap:wrap;gap:6px}
+.vers button{font:600 13px Figtree,sans-serif;color:var(--soft);background:var(--chip);border:1px solid transparent;border-radius:999px;padding:0 12px;min-height:36px;cursor:pointer}
+.vers button[aria-pressed=true]{color:var(--vinho);border-color:var(--vinho);background:transparent}
 .buy{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .price{white-space:nowrap}
 .price s{color:var(--soft);font-size:14px;margin-right:6px}
@@ -175,7 +178,7 @@ const TYPES = [
   {id:"magica",  nome:"Mágica",             curto:"Mágica",          preco:59.90, bf:49.90}
 ];
 
-const COLS = {amor:"Amor", cafe:"Café e humor", natal:"Natal", sua:"Faça a sua"};
+const COLS = {amor:"Amor", cafe:"Café e humor", times:"Times", natal:"Natal", sua:"Faça a sua"};
 
 const ITEMS = [
   {col:"amor", img:"img/amor1.jpg", nome:"Amor para a vida toda", desc:"Casalzinho abraçado em tons de rosa e azul. Presente certeiro para namorado ou namorada."},
@@ -188,6 +191,25 @@ const ITEMS = [
   {col:"cafe", img:"img/cafe3.jpg", nome:"Tomando café… talvez seja cerveja", desc:"De um lado a xícara de café, do outro a caneca de cerveja. Quem sabe, sabe."},
   {col:"cafe", img:"img/cafe4.jpg", nome:"Café pra assustar o fígado", desc:"“Tomando café pra assustar o fígado!” Boa para amigo secreto."},
   {col:"cafe", img:"img/cafe5.jpg", nome:"Expectativa e realidade", desc:"Expectativa: unicórnio. Realidade: unicorna. Para a amiga que vai rir na hora."},
+  {col:"times", imgs:["img/times/flamengo-1.jpg","img/times/flamengo-2.jpg","img/times/flamengo-3.jpg","img/times/flamengo-4.jpg","img/times/flamengo-5.jpg"], nome:"Flamengo", desc:"Caneca no estilo da camisa do time, com número nas costas. 5 versões para escolher."},
+  {col:"times", imgs:["img/times/palmeiras-1.jpg","img/times/palmeiras-2.jpg","img/times/palmeiras-3.jpg","img/times/palmeiras-4.jpg"], nome:"Palmeiras", desc:"Caneca no estilo da camisa do time, com número nas costas. 4 versões para escolher."},
+  {col:"times", imgs:["img/times/corinthians-1.jpg","img/times/corinthians-2.jpg","img/times/corinthians-3.jpg"], nome:"Corinthians", desc:"Caneca no estilo da camisa do time, com número nas costas. 3 versões para escolher."},
+  {col:"times", imgs:["img/times/sao-paulo-1.jpg","img/times/sao-paulo-2.jpg","img/times/sao-paulo-3.jpg","img/times/sao-paulo-4.jpg","img/times/sao-paulo-5.jpg"], nome:"São Paulo", desc:"Caneca no estilo da camisa do time, com número nas costas. 5 versões para escolher."},
+  {col:"times", imgs:["img/times/santos-1.jpg","img/times/santos-2.jpg","img/times/santos-3.jpg"], nome:"Santos", desc:"Caneca no estilo da camisa do time, com número nas costas. 3 versões para escolher."},
+  {col:"times", imgs:["img/times/vasco-1.jpg","img/times/vasco-2.jpg","img/times/vasco-3.jpg","img/times/vasco-4.jpg"], nome:"Vasco", desc:"Caneca no estilo da camisa do time, com número nas costas. 4 versões para escolher."},
+  {col:"times", imgs:["img/times/fluminense-1.jpg","img/times/fluminense-2.jpg"], nome:"Fluminense", desc:"Caneca no estilo da camisa do time, com número nas costas. 2 versões para escolher."},
+  {col:"times", imgs:["img/times/botafogo-1.jpg"], nome:"Botafogo", desc:"Caneca no estilo da camisa do time, com número nas costas."},
+  {col:"times", imgs:["img/times/gremio-1.jpg","img/times/gremio-2.jpg"], nome:"Grêmio", desc:"Caneca no estilo da camisa do time, com número nas costas. 2 versões para escolher."},
+  {col:"times", imgs:["img/times/internacional-1.jpg","img/times/internacional-2.jpg"], nome:"Internacional", desc:"Caneca no estilo da camisa do time, com número nas costas. 2 versões para escolher."},
+  {col:"times", imgs:["img/times/atletico-mg-1.jpg"], nome:"Atlético Mineiro", desc:"Caneca no estilo da camisa do time, com número nas costas."},
+  {col:"times", imgs:["img/times/cruzeiro-1.jpg"], nome:"Cruzeiro", desc:"Caneca no estilo da camisa do time, com número nas costas."},
+  {col:"times", imgs:["img/times/athletico-1.jpg","img/times/athletico-2.jpg"], nome:"Athletico Paranaense", desc:"Caneca no estilo da camisa do time, com número nas costas. 2 versões para escolher."},
+  {col:"times", imgs:["img/times/avai-1.jpg","img/times/avai-2.jpg"], nome:"Avaí", desc:"Caneca no estilo da camisa do time, com número nas costas. 2 versões para escolher."},
+  {col:"times", imgs:["img/times/chapecoense-1.jpg"], nome:"Chapecoense", desc:"Caneca no estilo da camisa do time, com número nas costas."},
+  {col:"times", imgs:["img/times/bahia-1.jpg","img/times/bahia-2.jpg"], nome:"Bahia", desc:"Caneca no estilo da camisa do time, com número nas costas. 2 versões para escolher."},
+  {col:"times", imgs:["img/times/fortaleza-1.jpg"], nome:"Fortaleza", desc:"Caneca no estilo da camisa do time, com número nas costas."},
+  {col:"times", imgs:["img/times/ceara-1.jpg"], nome:"Ceará", desc:"Caneca no estilo da camisa do time, com número nas costas."},
+  {col:"times", imgs:["img/times/goias-1.jpg"], nome:"Goiás", desc:"Caneca no estilo da camisa do time, com número nas costas."},
   {col:"natal", img:"img/natal1.jpg", nome:"Noite Feliz", desc:"Guirlanda de azevinho com “Feliz Natal” em letra cursiva e bolas natalinas do outro lado."},
   {col:"natal", img:"img/natal2.jpg", nome:"Aconchego", desc:"Fundo bege, flocos suaves e uma pequena floresta de pinheiros. Delicada e minimalista."},
   {col:"natal", img:"img/natal3.jpg", nome:"Turma do Biscoito", desc:"“Modo Natal ativado!” com uma turma de biscoitos de gengibre. Ótima para amigo secreto."},
@@ -210,7 +232,7 @@ const ownArt = '<svg viewBox="0 0 200 160" aria-hidden="true"><rect x="30" y="30
 
 const msg = (it, t) => it.own
   ? `Olá! Vi o catálogo e quero uma caneca personalizada (${t.nome}, ${brl(now(t))}). Posso te mandar a foto/frase?`
-  : `Olá! Vi o catálogo e quero a caneca *${it.nome}* no modelo ${t.nome} (${brl(now(t))}).`;
+  : `Olá! Vi o catálogo e quero a caneca *${it.nome}*${it.imgs && it.imgs.length > 1 ? ` (versão ${(it.v || 0) + 1})` : ""} no modelo ${t.nome} (${brl(now(t))}).`;
 const link = (it, t) => `https://wa.me/${WHATS}?text=${encodeURIComponent(msg(it, t))}`;
 const priceHtml = t => (BLACK_FRIDAY ? `<s>${brl(t.preco)}</s>` : "") + `<b>${brl(now(t))}</b>`;
 
@@ -222,10 +244,12 @@ document.getElementById("waFooter").href = `https://wa.me/${WHATS}?text=${encode
 const grid = document.getElementById("grid");
 grid.innerHTML = ITEMS.map((it, i) => `
   <article class="item${it.own ? " own" : ""}" data-col="${it.col}" data-i="${i}">
-    <div class="ph">${it.own ? ownArt : `<img src="${it.img}" alt="Caneca ${esc(it.nome)}" loading="lazy" width="640" height="571">`}${it.tag ? `<span class="tag">${esc(it.tag)}</span>` : ""}</div>
+    <div class="ph">${it.own ? ownArt : `<img src="${it.imgs ? it.imgs[0] : it.img}" alt="Caneca ${esc(it.nome)}" loading="lazy" width="640" height="571">`}${it.tag ? `<span class="tag">${esc(it.tag)}</span>` : ""}</div>
     <div class="body">
       <h3>${esc(it.nome)}</h3>
       <p>${esc(it.desc)}</p>
+      ${it.imgs && it.imgs.length > 1 ? `<div class="vers" role="group" aria-label="Versão da arte">${it.imgs.map((u, k) =>
+        `<button type="button" data-v="${k}" aria-pressed="${k === 0}">Versão ${k + 1}</button>`).join("")}</div>` : ""}
       <div class="opts" role="group" aria-label="Modelo da caneca">${TYPES.map((t, k) =>
         `<button type="button" data-t="${k}" aria-pressed="${k === 0}">${esc(t.curto)}</button>`).join("")}</div>
       <div class="buy"><span class="price">${priceHtml(TYPES[0])}</span>
@@ -234,6 +258,16 @@ grid.innerHTML = ITEMS.map((it, i) => `
   </article>`).join("");
 
 grid.addEventListener("click", e => {
+  const v = e.target.closest(".vers button");
+  if (v) {
+    const card = v.closest(".item"), it = ITEMS[+card.dataset.i];
+    it.v = +v.dataset.v;
+    card.querySelectorAll(".vers button").forEach(x => x.setAttribute("aria-pressed", x === v));
+    card.querySelector(".ph img").src = it.imgs[it.v];
+    const sel = card.querySelector(".opts button[aria-pressed=true]");
+    card.querySelector(".wa").href = link(it, TYPES[+sel.dataset.t]);
+    return;
+  }
   const b = e.target.closest(".opts button"); if (!b) return;
   const card = b.closest(".item"), it = ITEMS[+card.dataset.i], t = TYPES[+b.dataset.t];
   card.querySelectorAll(".opts button").forEach(x => x.setAttribute("aria-pressed", x === b));
