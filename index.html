@@ -196,7 +196,7 @@ const TYPES = [
   {id:"magica",  nome:"Mágica",             curto:"Mágica",          preco:59.90, bf:49.90}
 ];
 
-const COLS = {amor:"Amor", cafe:"Café e humor", times:"Times", diversos:"Diversos", natal:"Natal", sua:"Faça a sua"};
+const COLS = {amor:"Amor", cafe:"Café e humor", pai:"Pai e avô", aniversario:"Aniversário", profissoes:"Profissões", times:"Times", diversos:"Diversos", natal:"Natal", sua:"Faça a sua"};
 
 const ITEMS = [
   {col:"amor", img:"img/amor1.jpg", nome:"Amor para a vida toda", desc:"Casalzinho abraçado em tons de rosa e azul. Presente certeiro para namorado ou namorada."},
@@ -204,11 +204,32 @@ const ITEMS = [
   {col:"amor", img:"img/amor3.jpg", nome:"Foi dentro de um abraço seu", desc:"“Foi dentro de um abraço seu que eu encontrei o meu lugar”. Para quem gosta de declaração."},
   {col:"amor", img:"img/amor4.jpg", nome:"Eu amo você", desc:"Fundo floral azul claro com “Eu amo você” em letras grandes. Simples e fofa."},
   {col:"amor", img:"img/amor5.jpg", nome:"Minha metade", desc:"“Ele é a minha metade” de um lado e “E eu sou a metade dela” do outro."},
+  {col:"amor", img:"img/amor-savedate.jpg", nome:"Save the date", desc:"Passarinhos apaixonados com “Save the date · I love you” e xadrez rosa. Boa para noivado ou pedido de casamento."},
   {col:"cafe", img:"img/cafe1.jpg", nome:"Preciso é de café", desc:"“Não preciso de frase motivacional, preciso é de café!” Para o amigo que não funciona sem café."},
   {col:"cafe", img:"img/cafe2.jpg", nome:"Troco gente chata por café", desc:"Para a mesa do trabalho. Todo escritório tem alguém que precisa dessa caneca."},
   {col:"cafe", img:"img/cafe3.jpg", nome:"Tomando café… talvez seja cerveja", desc:"De um lado a xícara de café, do outro a caneca de cerveja. Quem sabe, sabe."},
   {col:"cafe", img:"img/cafe4.jpg", nome:"Café pra assustar o fígado", desc:"“Tomando café pra assustar o fígado!” Boa para amigo secreto."},
   {col:"cafe", img:"img/cafe5.jpg", nome:"Expectativa e realidade", desc:"Expectativa: unicórnio. Realidade: unicorna. Para a amiga que vai rir na hora."},
+  {col:"pai", img:"img/pai-heroi.jpg", nome:"Herói que não usa capa", desc:"“Você é o herói que não usa capa” em lettering branco sobre fundo vinho."},
+  {col:"pai", img:"img/pai-melhor.jpg", nome:"O melhor pai do mundo", desc:"Bigodão com “O melhor pai do mundo”. Clássica e fácil de acertar."},
+  {col:"pai", img:"img/pai-cafezeiro.jpg", nome:"Exclusiva do pai cafezeiro", desc:"“Desde sempre, exclusiva do pai mais cafezeiro que existe”. Para o pai que vive de café."},
+  {col:"pai", img:"img/pai-calado.jpg", nome:"Mesmo calado te amo dobrado", desc:"Lettering branco em fundo azul marinho com “Mesmo calado te amo dobrado”."},
+  {col:"pai", img:"img/pai-teamo.jpg", nome:"Pai, eu te amo", desc:"“Pai, eu te amo” em letra cursiva branca sobre fundo vinho."},
+  {col:"pai", img:"img/pai-coracao.jpg", nome:"Pai de coração", desc:"Coração pontilhado com “Pai de coração”. Para padrasto ou para quem fez papel de pai."},
+  {col:"pai", img:"img/pai-obra.jpg", nome:"Pai pra toda obra", desc:"Placa de aviso com “Pai pra toda obra” em fundo preto. Para o pai que conserta tudo."},
+  {col:"pai", img:"img/pai-avo.jpg", nome:"Meu pai avô", desc:"“Meu pai avô” com raios de sol em preto e branco. Para o vovô coruja."},
+  {col:"aniversario", img:"img/aniv-feliz.jpg", nome:"Feliz aniversário", desc:"Faixa vermelha, chapéus de festa e confete com “Feliz aniversário”."},
+  {col:"aniversario", img:"img/aniv-parabens.jpg", nome:"Parabéns pelo teu aniversário", desc:"Bolinhas coloridas com “Parabéns pelo teu aniversário, que você seja sempre muito feliz”."},
+  {col:"aniversario", img:"img/aniv-15anos.jpg", nome:"15 anos", desc:"Preto e rosa com laços, cupcakes e “15 anos”. Lembrancinha de debutante."},
+  {col:"aniversario", img:"img/aniv-doce.jpg", nome:"Feliz aniversário docinho", desc:"Verde menta com doces, pirulitos e “Feliz aniversário”. Também serve de lembrancinha de festa."},
+  {col:"aniversario", img:"img/aniv-happy.jpg", nome:"Happy birthday", desc:"Bolo com velinhas em fundo amarelo e “Happy birthday!”."},
+  {col:"profissoes", img:"img/prof-enfermagem.jpg", nome:"Enfermagem", desc:"Ícones de hospital, coração e estetoscópio com faixa “Enfermagem”."},
+  {col:"profissoes", img:"img/prof-medica.jpg", nome:"Médica heroína", desc:"Médica de máscara com “Eu vou lutar por todos aqueles que não podem lutar por eles mesmos” e o nome dela."},
+  {col:"profissoes", img:"img/prof-direito.jpg", nome:"Direito", desc:"Balança da justiça com “Se é pra fazer, faz direito!”. Para advogado ou estudante de Direito."},
+  {col:"profissoes", img:"img/prof-engenheiro.jpg", nome:"Engenheiro", desc:"“Transformo sonhos em realidade, sou engenheiro”, com faixa para o nome."},
+  {col:"profissoes", img:"img/prof-engmec.jpg", nome:"Engenheira mecânica", desc:"Engenheira com robô de um lado e “Sou engenheira mecânica” com espaço para o nome do outro."},
+  {col:"profissoes", img:"img/prof-coruja.jpg", nome:"Professor coruja", desc:"Corujinha de óculos e gravata com “Professor coruja”. Presente de fim de ano para o professor."},
+  {col:"profissoes", img:"img/prof-adverte.jpg", nome:"Este professor pode causar…", desc:"“O Ministério da Cultura adverte: este professor pode causar curiosidade aguda e sabedoria irreversível”."},
   {col:"times", imgs:["img/times/flamengo-1.jpg","img/times/flamengo-2.jpg","img/times/flamengo-3.jpg","img/times/flamengo-4.jpg","img/times/flamengo-5.jpg"], nome:"Flamengo", desc:"Caneca no estilo da camisa do time, com número nas costas. 5 versões para escolher."},
   {col:"times", imgs:["img/times/palmeiras-1.jpg","img/times/palmeiras-2.jpg","img/times/palmeiras-3.jpg","img/times/palmeiras-4.jpg"], nome:"Palmeiras", desc:"Caneca no estilo da camisa do time, com número nas costas. 4 versões para escolher."},
   {col:"times", imgs:["img/times/corinthians-1.jpg","img/times/corinthians-2.jpg","img/times/corinthians-3.jpg"], nome:"Corinthians", desc:"Caneca no estilo da camisa do time, com número nas costas. 3 versões para escolher."},
@@ -331,10 +352,12 @@ const DECK = [
   {img:"img/times/flamengo-1.jpg", nome:"Flamengo"},
   {img:"img/cafe1.jpg", nome:"Preciso é de café"},
   {img:"img/amor1.jpg", nome:"Amor para a vida toda"},
+  {img:"img/pai-heroi.jpg", nome:"Herói que não usa capa"},
   {img:"img/times/palmeiras-1.jpg", nome:"Palmeiras"},
   {img:"img/cafe5.jpg", nome:"Expectativa e realidade"},
   {img:"img/times/corinthians-1.jpg", nome:"Corinthians"},
   {img:"img/amor5.jpg", nome:"Minha metade"},
+  {img:"img/aniv-15anos.jpg", nome:"15 anos"},
   {img:"img/natal4.jpg", nome:"Brinde Dourado"}
 ];
 const deck = document.getElementById("deck");
