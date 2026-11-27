@@ -196,7 +196,7 @@ const TYPES = [
   {id:"magica",  nome:"Mágica",             curto:"Mágica",          preco:59.90, bf:49.90}
 ];
 
-const COLS = {amor:"Amor", cafe:"Café e humor", profissoes:"Profissões", times:"Times", diversos:"Diversos", natal:"Natal", sua:"Faça a sua"};
+const COLS = {amor:"Amor", cafe:"Café e humor", times:"Times", diversos:"Diversos", natal:"Natal", sua:"Faça a sua"};
 
 const ITEMS = [
   {col:"amor", img:"img/amor1.jpg", nome:"Amor para a vida toda", desc:"Casalzinho abraçado em tons de rosa e azul. Presente certeiro para namorado ou namorada."},
@@ -209,8 +209,6 @@ const ITEMS = [
   {col:"cafe", img:"img/cafe3.jpg", nome:"Tomando café… talvez seja cerveja", desc:"De um lado a xícara de café, do outro a caneca de cerveja. Quem sabe, sabe."},
   {col:"cafe", img:"img/cafe4.jpg", nome:"Café pra assustar o fígado", desc:"“Tomando café pra assustar o fígado!” Boa para amigo secreto."},
   {col:"cafe", img:"img/cafe5.jpg", nome:"Expectativa e realidade", desc:"Expectativa: unicórnio. Realidade: unicorna. Para a amiga que vai rir na hora."},
-  {col:"profissoes", img:"img/prof-medica.jpg", nome:"Médica heroína", desc:"Médica de máscara com “Eu vou lutar por todos aqueles que não podem lutar por eles mesmos” e o nome dela."},
-  {col:"profissoes", img:"img/prof-engmec.jpg", nome:"Engenheira mecânica", desc:"Engenheira com robô de um lado e “Sou engenheira mecânica” com espaço para o nome do outro."},
   {col:"times", imgs:["img/times/flamengo-1.jpg","img/times/flamengo-2.jpg","img/times/flamengo-3.jpg","img/times/flamengo-4.jpg","img/times/flamengo-5.jpg"], nome:"Flamengo", desc:"Caneca no estilo da camisa do time, com número nas costas. 5 versões para escolher."},
   {col:"times", imgs:["img/times/palmeiras-1.jpg","img/times/palmeiras-2.jpg","img/times/palmeiras-3.jpg","img/times/palmeiras-4.jpg"], nome:"Palmeiras", desc:"Caneca no estilo da camisa do time, com número nas costas. 4 versões para escolher."},
   {col:"times", imgs:["img/times/corinthians-1.jpg","img/times/corinthians-2.jpg","img/times/corinthians-3.jpg"], nome:"Corinthians", desc:"Caneca no estilo da camisa do time, com número nas costas. 3 versões para escolher."},
@@ -242,6 +240,10 @@ const ITEMS = [
   {col:"diversos", img:"img/div-05.jpg", nome:"Lanchonete anos 50", desc:"Fundo preto com milkshakes, cerejas e letreiro neon."},
   {col:"diversos", img:"img/div-06.jpg", nome:"Mapa do Maroto", desc:"Pergaminho envelhecido com castelo e o mapa da série de bruxos."},
   {col:"diversos", img:"img/div-09.jpg", nome:"Relíquias", desc:"Símbolo das relíquias sobre nuvem de palavras em preto e branco."},
+  {col:"natal", img:"img/natal1.jpg", nome:"Noite Feliz", desc:"Guirlanda de azevinho com “Feliz Natal” em letra cursiva e bolas natalinas do outro lado."},
+  {col:"natal", img:"img/natal2.jpg", nome:"Aconchego", desc:"Fundo bege, flocos suaves e uma pequena floresta de pinheiros. Delicada e minimalista."},
+  {col:"natal", img:"img/natal3.jpg", nome:"Turma do Biscoito", desc:"“Modo Natal ativado!” com uma turma de biscoitos de gengibre. Ótima para amigo secreto."},
+  {col:"natal", img:"img/natal4.jpg", nome:"Brinde Dourado", desc:"Vinho com molduras douradas e uma árvore geométrica. Presente com cara de presente caro."},
   {col:"natal", img:"img/pack1.jpg", nome:"Papai Noel", desc:"Papai Noel com o saco de presentes e “Feliz Natal” em verde."},
   {col:"natal", img:"img/pack2.jpg", nome:"Pinguim", desc:"Pinguim de gorro e cachecol com “Feliz Natal” em vermelho."},
   {col:"natal", img:"img/pack3.jpg", nome:"Ursinho Polar", desc:"Urso polar de cachecol com “Feliz Natal” em letra solta."},
@@ -257,11 +259,6 @@ const ITEMS = [
   {col:"natal", img:"img/n2-26.jpg", nome:"Castelo de gelo", desc:"Casal de ratinhos diante de um castelo de gelo, fundo azul."},
   {col:"natal", img:"img/n2-37.jpg", nome:"Carta pro Papai Noel", desc:"Ratinho entregando a carta pro Noel em frente ao castelo iluminado."},
   {col:"natal", img:"img/n2-35.jpg", nome:"Patinação no castelo", desc:"Casal patinando no gelo com o castelo e a turma ao fundo."},
-  {col:"natal", img:"img/n3-grinch.jpg", nome:"Ho Ho Ho do verdinho", desc:"Letras HO HO HO com o verdinho rabugento de gorro e chifre de rena."},
-  {col:"natal", img:"img/n3-stitch.jpg", nome:"Ho Ho Ho do alienígena azul", desc:"Letras HO HO HO com o bichinho azul de gorro de Noel e chifre de rena."},
-  {col:"natal", img:"img/n3-pikachu.jpg", nome:"Ho Ho Ho do ratinho amarelo", desc:"Letras HO HO HO com o ratinho elétrico amarelo de gorro e chifre de rena."},
-  {col:"natal", img:"img/n3-cerveja.jpg", nome:"Ho Ho Ho da cerveja", desc:"Letras HO HO HO com canecas de chope de gorro, cachecol e pisca-pisca. Para quem brinda o Natal."},
-  {col:"natal", img:"img/n3-mickey.jpg", nome:"Merry Christmas do ratinho", desc:"Ratinho clássico de gorro e suéter natalino com “Merry Christmas” e pinheiros nevados."},
   {col:"sua", own:true, nome:"Sua foto, nome ou frase", desc:"Manda a foto, o nome ou a frase que você quer e a gente monta a arte para você aprovar antes."}
 ];
 /* ====== FIM DA EDIÇÃO ====== */
@@ -338,6 +335,7 @@ const DECK = [
   {img:"img/cafe5.jpg", nome:"Expectativa e realidade"},
   {img:"img/times/corinthians-1.jpg", nome:"Corinthians"},
   {img:"img/amor5.jpg", nome:"Minha metade"},
+  {img:"img/natal4.jpg", nome:"Brinde Dourado"}
 ];
 const deck = document.getElementById("deck");
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
