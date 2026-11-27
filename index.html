@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FS Personalização · Catálogo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: vitrine de loja pequena, calorosa, direta, sem exagero
+   IDEA: a prateleira de uma lojinha de presentes, cada caneca com sua etiqueta de preço
+   PICTURE: a caneca Brinde Dourado grande no topo, fotos reais em cada etiqueta
+   COLOUR and TYPE: vinho FS dominante, rosa de apoio, branco nas prateleiras; Instrument Serif + Figtree
+   LAYOUT: topo vinho com foto, faixa de oferta, filtros, grade de etiquetas, como pedir, rodapé vinho */
+:root{color-scheme:light dark;
+--vinho:#6b1838;--vinho2:#4a0f26;--rosa:#f08aa8;--rosa-claro:#fde3ea;
+--bg:light-dark(#ffffff,#1a0b11);--card:light-dark(#ffffff,#26121a);--line:light-dark(#efe2e6,#3a2029);
+--ink:light-dark(#2a1119,#f6e9ee);--soft:light-dark(#6e5560,#c6a9b5);--chip:light-dark(#faf1f4,#331820)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Figtree,system-ui,sans-serif;overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 max(5vw,16px)}
+h1,h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;line-height:1.05;text-wrap:balance;margin:0}
+
+/* topo */
+.top{background:var(--vinho);color:#fff;position:relative;overflow:hidden}
+.top::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(240,138,168,.35),transparent 70%)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:16px;position:relative;z-index:1}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mono{width:44px;height:44px;border-radius:50%;background:var(--rosa);color:var(--vinho2);display:grid;place-items:center;font:italic 22px/1 "Instrument Serif",serif;letter-spacing:-.5px;flex:none}
+.brand b{display:block;font-weight:600;font-size:16px}.brand small{display:block;font-size:13px;opacity:.75}
+.ig{font-size:14px;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:10px 16px;white-space:nowrap}
+.ig:hover{background:rgba(255,255,255,.1)}
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(20px,4vw,56px);align-items:center;padding-block:clamp(12px,3vw,40px) clamp(32px,5vw,64px);position:relative;z-index:1}
+.hero h1{font-size:clamp(40px,6.4vw,68px)}
+.hero h1 em{color:var(--rosa)}
+.hero p{font-size:17px;max-width:30em;opacity:.9;margin:18px 0 26px}
+.hero .ph{border-radius:22px;overflow:hidden;aspect-ratio:1/1;box-shadow:0 30px 60px -20px rgba(0,0,0,.55);transform:rotate(1.5deg)}
+.hero .ph img{width:100%;height:100%;object-fit:cover}
+.types{display:flex;flex-wrap:wrap;gap:8px}
+.types span{background:rgba(255,255,255,.1);border-radius:12px;padding:10px 14px;font-size:14px;line-height:1.3}
+.types b{display:block;font-size:17px;white-space:nowrap}
+.types s{opacity:.6;font-size:13px;margin-right:4px}
+
+/* faixa black friday (apagar a <section class="bf"> e BLACK_FRIDAY=false para tirar) */
+.bf{background:#16090e;color:#fff}
+.bf .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;padding-block:16px}
+.bf strong{font-size:18px}.bf strong span{color:var(--rosa)}
+.bf p{margin:0;font-size:15px;opacity:.85}
+
+/* filtros e grade */
+.shelf{padding-block:clamp(32px,5vw,64px)}
+.shelf h2{font-size:clamp(32px,4.4vw,46px)}
+.lead{color:var(--soft);margin:8px 0 22px;max-width:38em}
+.filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:22px}
+.filters button{flex:none;font:600 15px Figtree,sans-serif;color:var(--ink);background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:0 18px;min-height:44px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--vinho);border-color:var(--vinho);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:20px}
+.item[hidden]{display:none}
+.item{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.item .ph{aspect-ratio:640/571;background:var(--chip);position:relative}
+.item .ph img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;left:12px;top:12px;background:var(--rosa);color:var(--vinho2);font-size:13px;font-weight:700;border-radius:999px;padding:4px 10px}
+.body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.body h3{margin:0;font-size:19px;line-height:1.2}
+.body p{margin:0;color:var(--soft);font-size:15px}
+.opts{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.opts button{font:500 14px Figtree,sans-serif;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:10px;padding:0 12px;min-height:40px;cursor:pointer}
+.opts button[aria-pressed=true]{border-color:var(--vinho);background:var(--rosa-claro);color:var(--vinho2);font-weight:700}
+.buy{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.price{white-space:nowrap}
+.price s{color:var(--soft);font-size:14px;margin-right:6px}
+.price b{font-size:24px}
+.wa{display:inline-flex;align-items:center;gap:8px;background:#1f8f4e;color:#fff;text-decoration:none;font-weight:700;font-size:15px;border-radius:12px;padding:0 16px;min-height:46px;white-space:nowrap}
+.wa:hover{background:#187a41}
+.wa svg{width:20px;height:20px;flex:none}
+button:focus-visible,a:focus-visible{outline:3px solid var(--rosa);outline-offset:2px}
+
+/* faça a sua */
+.own{background:var(--rosa-claro);color:#2a1119;border-color:transparent}
+.own .ph{background:var(--vinho);display:grid;place-items:center}
+.own .ph svg{width:62%;height:auto}
+.own .body p{color:#6e5560}
+.own .opts button{color:#2a1119;border-color:#f2c3d1}
+.own .opts button[aria-pressed=true]{background:#fff}
+.own .price s{color:#6e5560}
+
+/* como pedir */
+.how{background:var(--chip);padding-block:clamp(32px,5vw,56px)}
+.how h2{font-size:clamp(30px,4vw,40px);margin-bottom:20px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;list-style:none;margin:0;padding:0}
+.steps li{border-top:2px solid var(--vinho);padding-top:12px}
+.steps b{display:block;font-size:17px;margin-bottom:4px}
+.steps span{color:var(--soft);font-size:15px}
+footer{background:var(--vinho2);color:#fff;padding-block:36px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center}
+footer p{margin:0;opacity:.85;font-size:15px}
+.note{font-size:13px;opacity:.7;margin-top:6px}
+
+@media(max-width:700px){
+.hero{grid-template-columns:1fr}
+.hero .ph{max-width:340px;justify-self:center;width:80%;order:-1;transform:rotate(1.5deg)}
+.hero{text-align:left}
+.steps{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:no-preference){.item{transition:transform .2s}.item:hover{transform:translateY(-3px)}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#inicio" id="inicio"><span class="mono">FS</span><span><b>FS Personalização</b><small>Canecas sublimadas</small></span></a>
+    <a class="ig" href="https://instagram.com/fs.personalizacao">@fs.personalizacao</a>
+  </div>
+  <div class="wrap hero">
+    <div>
+      <h1>Canecas que já chegam com <em>cara de presente</em></h1>
+      <p>Escolha a estampa, escolha o modelo da caneca e chame no WhatsApp. A gente confirma tudo com você antes de produzir.</p>
+      <div class="types" id="types"></div>
+    </div>
+    <div class="ph"><img src="img/hero.jpg" alt="Caneca com a frase Eu quero morar no teu abraço" width="800" height="800"></div>
+  </div>
+</header>
+
+<section class="bf" id="bf">
+  <div class="wrap">
+    <strong>Black Friday: <span>preços com desconto</span> só até domingo</strong>
+    <p>Combo de 2 canecas brancas por R$ 55,00</p>
+  </div>
+</section>
+
+<main class="wrap shelf" id="catalogo">
+  <h2>Catálogo</h2>
+  <p class="lead">Toda estampa pode ser feita em qualquer um dos três modelos. Toque no modelo para ver o preço.</p>
+  <div class="filters" role="toolbar" aria-label="Filtrar por coleção" id="filters"></div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<section class="how">
+  <div class="wrap">
+    <h2>Como pedir</h2>
+    <ol class="steps">
+      <li><b>Escolha a estampa e o modelo</b><span>Branca, alça de coração ou mágica.</span></li>
+      <li><b>Toque em Pedir no WhatsApp</b><span>A mensagem já vai com o nome da caneca e o preço.</span></li>
+      <li><b>Combine os detalhes</b><span>Nome, frase, quantidade, prazo e entrega, direto com a gente.</span></li>
+    </ol>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p><b>FS Personalização</b></p>
+      <p>WhatsApp (47) 98419-6261 · Instagram @fs.personalizacao</p>
+      <p class="note">Fotos ilustrativas. Cores podem variar um pouco de tela para tela.</p>
+    </div>
+    <a class="wa" id="waFooter" href="https://wa.me/5547984196261">Falar no WhatsApp</a>
+  </div>
+</footer>
+
+<script>
+{
+/* ====== EDITE AQUI ======
+   Black Friday: troque para false quando acabar a promoção
+   (a faixa de oferta some sozinha). */
+const BLACK_FRIDAY = true;
+const WHATS = "5547984196261";
+
+const TYPES = [
+  {id:"branca",  nome:"Branca tradicional", curto:"Branca",          preco:39.90, bf:29.90},
+  {id:"coracao", nome:"Alça de coração",    curto:"Alça de coração", preco:49.90, bf:39.90},
+  {id:"magica",  nome:"Mágica",             curto:"Mágica",          preco:59.90, bf:49.90}
+];
+
+const COLS = {amor:"Amor", cafe:"Café e humor", natal:"Natal", sua:"Faça a sua"};
+
+const ITEMS = [
+  {col:"amor", img:"img/amor1.jpg", nome:"Amor para a vida toda", desc:"Casalzinho abraçado em tons de rosa e azul. Presente certeiro para namorado ou namorada."},
+  {col:"amor", img:"img/amor2.jpg", nome:"Eu quero morar no teu abraço", desc:"Frase em letra cursiva com fundo rosa e azul. Romântica sem ser exagerada."},
+  {col:"amor", img:"img/amor3.jpg", nome:"Foi dentro de um abraço seu", desc:"“Foi dentro de um abraço seu que eu encontrei o meu lugar”. Para quem gosta de declaração."},
+  {col:"amor", img:"img/amor4.jpg", nome:"Eu amo você", desc:"Fundo floral azul claro com “Eu amo você” em letras grandes. Simples e fofa."},
+  {col:"amor", img:"img/amor5.jpg", nome:"Minha metade", desc:"“Ele é a minha metade” de um lado e “E eu sou a metade dela” do outro."},
+  {col:"cafe", img:"img/cafe1.jpg", nome:"Preciso é de café", desc:"“Não preciso de frase motivacional, preciso é de café!” Para o amigo que não funciona sem café."},
+  {col:"cafe", img:"img/cafe2.jpg", nome:"Troco gente chata por café", desc:"Para a mesa do trabalho. Todo escritório tem alguém que precisa dessa caneca."},
+  {col:"cafe", img:"img/cafe3.jpg", nome:"Tomando café… talvez seja cerveja", desc:"De um lado a xícara de café, do outro a caneca de cerveja. Quem sabe, sabe."},
+  {col:"cafe", img:"img/cafe4.jpg", nome:"Café pra assustar o fígado", desc:"“Tomando café pra assustar o fígado!” Boa para amigo secreto."},
+  {col:"cafe", img:"img/cafe5.jpg", nome:"Expectativa e realidade", desc:"Expectativa: unicórnio. Realidade: unicorna. Para a amiga que vai rir na hora."},
+  {col:"natal", img:"img/natal1.jpg", nome:"Noite Feliz", desc:"Guirlanda de azevinho com “Feliz Natal” em letra cursiva e bolas natalinas do outro lado."},
+  {col:"natal", img:"img/natal2.jpg", nome:"Aconchego", desc:"Fundo bege, flocos suaves e uma pequena floresta de pinheiros. Delicada e minimalista."},
+  {col:"natal", img:"img/natal3.jpg", nome:"Turma do Biscoito", desc:"“Modo Natal ativado!” com uma turma de biscoitos de gengibre. Ótima para amigo secreto."},
+  {col:"natal", img:"img/natal4.jpg", nome:"Brinde Dourado", desc:"Vinho com molduras douradas e uma árvore geométrica. Presente com cara de presente caro."},
+  {col:"natal", img:"img/pack1.jpg", nome:"Papai Noel", desc:"Papai Noel com o saco de presentes e “Feliz Natal” em verde."},
+  {col:"natal", img:"img/pack2.jpg", nome:"Pinguim", desc:"Pinguim de gorro e cachecol com “Feliz Natal” em vermelho."},
+  {col:"natal", img:"img/pack3.jpg", nome:"Ursinho Polar", desc:"Urso polar de cachecol com “Feliz Natal” em letra solta."},
+  {col:"natal", img:"img/pack4.jpg", nome:"Bonecos de Neve", desc:"Fundo azul noite com uma turma de bonecos de neve."},
+  {col:"natal", img:"img/pack5.jpg", nome:"Roupa do Noel", desc:"Casaco vermelho com cinto do Papai Noel e “Ho Ho Ho”."},
+  {col:"sua", own:true, nome:"Sua foto, nome ou frase", desc:"Manda a foto, o nome ou a frase que você quer e a gente monta a arte para você aprovar antes."}
+];
+/* ====== FIM DA EDIÇÃO ====== */
+
+const brl = v => "R$ " + v.toFixed(2).replace(".", ",");
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+if (!BLACK_FRIDAY) document.getElementById("bf").remove();
+const now = t => BLACK_FRIDAY ? t.bf : t.preco;
+const waIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>';
+const ownArt = '<svg viewBox="0 0 200 160" aria-hidden="true"><rect x="30" y="30" width="110" height="110" rx="10" fill="#fff"/><path d="M140 55h14a22 22 0 0 1 0 44h-14" fill="none" stroke="#fff" stroke-width="12"/><rect x="44" y="46" width="82" height="58" rx="6" fill="#f08aa8"/><circle cx="66" cy="66" r="8" fill="#fde3ea"/><path d="M48 100l24-22 16 14 14-10 20 18z" fill="#6b1838" opacity=".8"/><rect x="50" y="114" width="70" height="8" rx="4" fill="#f08aa8"/></svg>';
+
+const msg = (it, t) => it.own
+  ? `Olá! Vi o catálogo e quero uma caneca personalizada (${t.nome}, ${brl(now(t))}). Posso te mandar a foto/frase?`
+  : `Olá! Vi o catálogo e quero a caneca *${it.nome}* no modelo ${t.nome} (${brl(now(t))}).`;
+const link = (it, t) => `https://wa.me/${WHATS}?text=${encodeURIComponent(msg(it, t))}`;
+const priceHtml = t => (BLACK_FRIDAY ? `<s>${brl(t.preco)}</s>` : "") + `<b>${brl(now(t))}</b>`;
+
+document.getElementById("types").innerHTML = TYPES.map(t =>
+  `<span>${esc(t.nome)}<b>${BLACK_FRIDAY ? `<s>${brl(t.preco)}</s>` : ""}${brl(now(t))}</b></span>`).join("");
+
+document.getElementById("waFooter").href = `https://wa.me/${WHATS}?text=${encodeURIComponent("Olá! Vi o catálogo da FS e queria tirar uma dúvida.")}`;
+
+const grid = document.getElementById("grid");
+grid.innerHTML = ITEMS.map((it, i) => `
+  <article class="item${it.own ? " own" : ""}" data-col="${it.col}" data-i="${i}">
+    <div class="ph">${it.own ? ownArt : `<img src="${it.img}" alt="Caneca ${esc(it.nome)}" loading="lazy" width="640" height="571">`}${it.tag ? `<span class="tag">${esc(it.tag)}</span>` : ""}</div>
+    <div class="body">
+      <h3>${esc(it.nome)}</h3>
+      <p>${esc(it.desc)}</p>
+      <div class="opts" role="group" aria-label="Modelo da caneca">${TYPES.map((t, k) =>
+        `<button type="button" data-t="${k}" aria-pressed="${k === 0}">${esc(t.curto)}</button>`).join("")}</div>
+      <div class="buy"><span class="price">${priceHtml(TYPES[0])}</span>
+        <a class="wa" href="${link(it, TYPES[0])}" target="_blank" rel="noopener">${waIcon}Pedir no WhatsApp</a></div>
+    </div>
+  </article>`).join("");
+
+grid.addEventListener("click", e => {
+  const b = e.target.closest(".opts button"); if (!b) return;
+  const card = b.closest(".item"), it = ITEMS[+card.dataset.i], t = TYPES[+b.dataset.t];
+  card.querySelectorAll(".opts button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  card.querySelector(".price").innerHTML = priceHtml(t);
+  card.querySelector(".wa").href = link(it, t);
+});
+
+const filters = document.getElementById("filters");
+const keys = ["todas", ...Object.keys(COLS)];
+filters.innerHTML = keys.map((k, i) =>
+  `<button type="button" data-f="${k}" aria-pressed="${i === 0}">${k === "todas" ? "Todas" : COLS[k]}</button>`).join("");
+filters.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  filters.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  grid.querySelectorAll(".item").forEach(c => c.hidden = !(b.dataset.f === "todas" || c.dataset.col === b.dataset.f));
+});
+}
+</script>
+</body>
+</html>
