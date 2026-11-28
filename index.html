@@ -2,42 +2,83 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FS Personalização · Catálogo</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>FS Personalização · Canecas personalizadas e de Natal</title>
+<meta name="description" content="Catálogo de canecas sublimadas da FS Personalização: Natal, amor, café e humor, times e caneca com a sua foto. Escolha a estampa e o modelo e peça pelo WhatsApp.">
+<link rel="canonical" href="https://vitorkkkp0.github.io/">
+<meta name="theme-color" content="#6b1838">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="FS Personalização">
+<meta property="og:title" content="FS Personalização · Canecas personalizadas">
+<meta property="og:description" content="Mais de 120 estampas de caneca, incluindo uma coleção de Natal. Escolha e peça pelo WhatsApp.">
+<meta property="og:url" content="https://vitorkkkp0.github.io/">
+<meta property="og:image" content="https://vitorkkkp0.github.io/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23f08aa8'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-style='italic' font-size='30' text-anchor='middle' fill='%234a0f26'%3EFS%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Store","name":"FS Personalização","description":"Canecas sublimadas personalizadas","url":"https://vitorkkkp0.github.io/","image":"https://vitorkkkp0.github.io/img/og.jpg","telephone":"+55-47-98419-6261","sameAs":["https://instagram.com/fs.personalizacao"],"priceRange":"R$ 29,90 a R$ 59,90"}
+</script>
 <style>
-/* VOICE: vitrine de loja pequena, calorosa, direta, sem exagero
-   IDEA: a prateleira de uma lojinha de presentes, cada caneca com sua etiqueta de preço
-   PICTURE: a caneca Brinde Dourado grande no topo, fotos reais em cada etiqueta
-   COLOUR and TYPE: vinho FS dominante, rosa de apoio, branco nas prateleiras; Instrument Serif + Figtree
-   LAYOUT: topo vinho com foto, faixa de oferta, filtros, grade de etiquetas, como pedir, rodapé vinho */
 :root{color-scheme:light dark;
---vinho:#6b1838;--vinho2:#4a0f26;--rosa:#f08aa8;--rosa-claro:#fde3ea;
+--vinho:#6b1838;--vinho2:#4a0f26;--rosa:#f08aa8;--rosa-claro:#fde3ea;--verde:#1f8f4e;--verde2:#187a41;
 --bg:light-dark(#ffffff,#1a0b11);--card:light-dark(#ffffff,#26121a);--line:light-dark(#efe2e6,#3a2029);
---ink:light-dark(#2a1119,#f6e9ee);--soft:light-dark(#6e5560,#c6a9b5);--chip:light-dark(#faf1f4,#331820)}
+--ink:light-dark(#2a1119,#f6e9ee);--soft:light-dark(#6e5560,#c6a9b5);--chip:light-dark(#faf1f4,#331820);
+--shadow:0 18px 40px -20px rgba(74,15,38,.45)}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Figtree,system-ui,sans-serif;overflow-x:clip}
+html{scroll-behavior:smooth;scroll-padding-top:150px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Figtree,system-ui,sans-serif;overflow-x:clip;padding-bottom:env(safe-area-inset-bottom)}
 img{display:block;max-width:100%}
+[hidden]{display:none!important}
 a{color:inherit}
+button{font-family:inherit}
 .wrap{max-width:1180px;margin:0 auto;padding:0 max(5vw,16px)}
 h1,h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;line-height:1.05;text-wrap:balance;margin:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--rosa);outline-offset:2px}
+.wa-ico{width:20px;height:20px;flex:none}
 
 /* topo */
 .top{background:var(--vinho);color:#fff;position:relative;overflow:hidden}
-.top::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(240,138,168,.35),transparent 70%)}
+.top::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(240,138,168,.35),transparent 70%);pointer-events:none}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:16px;position:relative;z-index:1}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-.mono{width:44px;height:44px;border-radius:50%;background:var(--rosa);color:var(--vinho2);display:grid;place-items:center;font:italic 22px/1 "Instrument Serif",serif;letter-spacing:-.5px;flex:none}
+.mono{width:44px;height:44px;border-radius:50%;background:var(--rosa);color:var(--vinho2);display:grid;place-items:center;font:italic 22px/1 "Instrument Serif",serif;flex:none}
 .brand b{display:block;font-weight:600;font-size:16px}.brand small{display:block;font-size:13px;opacity:.75}
 .ig{font-size:14px;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:10px 16px;white-space:nowrap}
 .ig:hover{background:rgba(255,255,255,.1)}
-.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(20px,4vw,56px);align-items:center;padding-block:clamp(12px,3vw,40px) clamp(32px,5vw,64px);position:relative;z-index:1}
+.igs{display:none}
+@media(max-width:460px){.igl{display:none}.igs{display:inline}.ig{padding:8px 14px}}
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(20px,4vw,56px);align-items:center;padding-block:clamp(8px,3vw,40px) clamp(32px,5vw,64px);position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600;margin-bottom:16px}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:#7ee0a3;box-shadow:0 0 0 4px rgba(126,224,163,.25)}
 .hero h1{font-size:clamp(40px,6.4vw,68px)}
 .hero h1 em{color:var(--rosa)}
-.hero p{font-size:17px;max-width:30em;opacity:.9;margin:18px 0 26px}
+.hero p{font-size:17px;max-width:30em;opacity:.9;margin:16px 0 22px}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 20px;border-radius:14px;font:700 16px Figtree,sans-serif;text-decoration:none;cursor:pointer;border:0;white-space:nowrap}
+.btn-rosa{background:var(--rosa);color:var(--vinho2)}
+.btn-rosa:hover{background:#f5a3bb}
+.btn-out{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)}
+.btn-out:hover{background:rgba(255,255,255,.1)}
+.btn-wa{background:var(--verde);color:#fff}
+.btn-wa:hover{background:var(--verde2)}
+.btn-soft{background:var(--chip);color:var(--ink);border:1px solid var(--line)}
+.btn-soft:hover{border-color:var(--vinho)}
+.types{display:flex;flex-wrap:wrap;gap:8px}
+.types span{background:rgba(255,255,255,.1);border-radius:12px;padding:10px 14px;font-size:14px;line-height:1.3}
+.types b{display:block;font-size:17px;white-space:nowrap}
+.types s{opacity:.6;font-size:13px;margin-right:4px}
+.trust{display:flex;flex-wrap:wrap;gap:6px 18px;list-style:none;padding:0;margin:18px 0 0;font-size:14px;opacity:.9}
+.trust li::before{content:"✓ ";color:var(--rosa);font-weight:700}
+
 .stage{display:flex;flex-direction:column;align-items:center;gap:14px}
 .deck{position:relative;width:100%;max-width:440px;aspect-ratio:1/1;touch-action:pan-y;user-select:none;-webkit-user-select:none}
 .card{position:absolute;inset:0;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 24px 50px -18px rgba(0,0,0,.6);transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .35s;will-change:transform;cursor:grab}
@@ -47,83 +88,176 @@ h1,h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;line-height:1
 .dtitle{font-size:clamp(26px,3vw,32px);margin:0;color:#fff}
 .dend{position:absolute;inset:0;border-radius:22px;border:2px dashed rgba(255,255,255,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:24px}
 .dend p{margin:0;font:400 26px/1.15 "Instrument Serif",Georgia,serif;text-wrap:balance}
-.dbtn{background:var(--rosa);color:var(--vinho2);font-weight:700;text-decoration:none;border-radius:12px;padding:0 20px;min-height:48px;display:inline-flex;align-items:center}
 .dagain{background:transparent;border:0;color:#fff;font:600 15px Figtree,sans-serif;text-decoration:underline;cursor:pointer;min-height:44px}
-.deckbar button:disabled{opacity:.3;cursor:default}
 .deckbar{display:flex;align-items:center;gap:12px}
 .deckbar button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;font-size:20px;cursor:pointer}
 .deckbar button:hover{background:rgba(255,255,255,.12)}
+.deckbar button:disabled{opacity:.3;cursor:default}
 .deckbar small{font-size:14px;opacity:.85}
-.types{display:flex;flex-wrap:wrap;gap:8px}
-.types span{background:rgba(255,255,255,.1);border-radius:12px;padding:10px 14px;font-size:14px;line-height:1.3}
-.types b{display:block;font-size:17px;white-space:nowrap}
-.types s{opacity:.6;font-size:13px;margin-right:4px}
 
-/* faixa black friday (apagar a <section class="bf"> e BLACK_FRIDAY=false para tirar) */
+/* faixa de oferta */
 .bf{background:#16090e;color:#fff}
 .bf .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;padding-block:16px}
 .bf strong{font-size:18px}.bf strong span{color:var(--rosa)}
 .bf p{margin:0;font-size:15px;opacity:.85}
 
-/* filtros e grade */
-.shelf{padding-block:clamp(32px,5vw,64px)}
+/* coleções em destaque */
+.cols{padding-top:clamp(28px,4vw,48px)}
+.cols h2{font-size:clamp(28px,3.6vw,38px);margin-bottom:14px}
+.colrow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.colcard{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:1/1.08;border:0;padding:0;cursor:pointer;background:var(--chip);color:#fff;text-align:left}
+.colcard img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.colcard:hover img{transform:scale(1.05)}
+.colcard span{position:absolute;inset:auto 0 0 0;padding:28px 12px 10px;background:linear-gradient(transparent,rgba(42,10,22,.85));font-weight:700;font-size:16px;line-height:1.2}
+.colcard small{display:block;font-weight:500;font-size:13px;opacity:.85}
+.colcard.natal{outline:3px solid var(--rosa);outline-offset:-3px}
+.colcard .own-bg{width:100%;height:100%;background:var(--vinho);display:grid;place-items:center}
+.colcard .own-bg svg{width:70%}
+
+/* catálogo */
+.shelf{padding-block:clamp(28px,4vw,48px) clamp(40px,6vw,72px)}
 .shelf h2{font-size:clamp(32px,4.4vw,46px)}
-.lead{color:var(--soft);margin:8px 0 22px;max-width:38em}
-.filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:22px}
-.filters button{flex:none;font:600 15px Figtree,sans-serif;color:var(--ink);background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:0 18px;min-height:44px;cursor:pointer}
+.lead{color:var(--soft);margin:6px 0 16px;max-width:38em}
+.tools{position:sticky;top:0;z-index:20;background:var(--bg);margin:0 calc(-1 * max(5vw,16px));padding:10px max(5vw,16px) 8px;border-bottom:1px solid transparent;transition:border-color .2s}
+.tools.stuck{border-bottom-color:var(--line);box-shadow:0 8px 20px -18px rgba(0,0,0,.5)}
+.search{position:relative;margin-bottom:10px}
+.search svg{position:absolute;left:14px;top:50%;translate:0 -50%;width:20px;height:20px;color:var(--soft);pointer-events:none}
+.search input{width:100%;min-height:50px;border-radius:14px;border:1px solid var(--line);background:var(--chip);color:var(--ink);font:500 16px Figtree,sans-serif;padding:0 44px 0 44px}
+.search input::placeholder{color:var(--soft)}
+.search input:focus{border-color:var(--vinho);outline:none;background:var(--bg)}
+.search .clear{position:absolute;right:6px;top:50%;translate:0 -50%;width:40px;height:40px;border:0;background:transparent;color:var(--soft);font-size:22px;cursor:pointer;border-radius:10px}
+.search .clear[hidden]{display:none}
+.filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.filters::-webkit-scrollbar{display:none}
+.filters button{flex:none;font:600 15px Figtree,sans-serif;color:var(--ink);background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:0 16px;min-height:44px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.filters button small{font-weight:500;font-size:12px;color:var(--soft)}
 .filters button[aria-pressed=true]{background:var(--vinho);border-color:var(--vinho);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:20px}
-.item[hidden]{display:none}
-.item{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
-.item .ph{aspect-ratio:640/571;background:var(--chip);position:relative}
-.item .ph img{width:100%;height:100%;object-fit:cover}
-.tag{position:absolute;left:12px;top:12px;background:var(--rosa);color:var(--vinho2);font-size:13px;font-weight:700;border-radius:999px;padding:4px 10px}
-.body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
-.body h3{margin:0;font-size:19px;line-height:1.2}
-.body p{margin:0;color:var(--soft);font-size:15px}
-.opts{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
-.opts button{font:500 14px Figtree,sans-serif;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:10px;padding:0 12px;min-height:40px;cursor:pointer}
-.opts button[aria-pressed=true]{border-color:var(--vinho);background:var(--rosa-claro);color:var(--vinho2);font-weight:700}
+.filters button[aria-pressed=true] small{color:#fde3ea}
+.count{font-size:14px;color:var(--soft);margin:14px 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(46%,240px),1fr));gap:clamp(10px,2vw,20px)}
+.item{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;text-align:left;padding:0;color:inherit;font:inherit;cursor:pointer;position:relative}
+.item .ph{aspect-ratio:640/571;background:var(--chip);position:relative;overflow:hidden}
+.item .ph img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.badge{position:absolute;left:8px;top:8px;background:rgba(255,255,255,.94);color:var(--vinho2);font-size:12px;font-weight:700;border-radius:999px;padding:3px 9px}
+.badge.n{background:#b3122e;color:#fff}
+.item .body{padding:10px 12px 12px;display:flex;flex-direction:column;gap:6px;flex:1}
+.item h3{margin:0;font-size:15.5px;line-height:1.25;font-weight:600}
+.from{font-size:13px;color:var(--soft);margin-top:auto}
+.from b{color:var(--ink);font-size:16px}
+.from s{margin-right:4px}
+.see{display:flex;align-items:center;justify-content:center;gap:6px;min-height:40px;border-radius:10px;background:var(--rosa-claro);color:var(--vinho2);font-weight:700;font-size:14px}
+.item.own{background:var(--rosa-claro);border-color:transparent;color:#2a1119}
+.item.own .ph{background:var(--vinho);display:grid;place-items:center}
+.item.own .ph svg{width:62%;height:auto}
+.item.own .from{color:#6e5560}.item.own .from b{color:#2a1119}
+.item.own .see{background:#fff}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.item{transition:transform .2s,box-shadow .2s}.item:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.item:hover .ph img{transform:scale(1.04)}}
+.more{display:flex;justify-content:center;margin-top:24px}
+.empty{text-align:center;padding:36px 16px;border:2px dashed var(--line);border-radius:18px}
+.empty p{margin:0 0 14px;color:var(--soft)}
+.empty b{display:block;font-size:20px;color:var(--ink);margin-bottom:6px}
+
+/* janela da caneca */
+dialog{border:0;padding:0;background:var(--card);color:var(--ink);max-width:min(940px,100vw);width:100%;max-height:100dvh;border-radius:22px;box-shadow:0 40px 80px -20px rgba(0,0,0,.6)}
+dialog::backdrop{background:rgba(26,8,16,.7);backdrop-filter:blur(3px)}
+.dlg{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+.dimg{position:relative;background:var(--chip);aspect-ratio:640/571;align-self:start}
+.dimg img{width:100%;height:100%;object-fit:cover}
+@media(min-width:701px){.dimg{align-self:stretch;aspect-ratio:auto;min-height:420px}.dimg img{position:absolute;inset:0;object-fit:contain}}
+.dnav{position:absolute;top:50%;translate:0 -50%;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.9);color:var(--vinho2);font-size:22px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.dnav.p{left:10px}.dnav.n{right:10px}
+.dinfo{padding:22px 22px 20px;display:flex;flex-direction:column;gap:14px;overflow:auto;max-height:100dvh}
+.dclose{position:absolute;top:10px;right:10px;z-index:3;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.94);color:var(--vinho2);font-size:24px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.dcol{font-size:13px;font-weight:700;color:var(--vinho);text-transform:uppercase;letter-spacing:.06em}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .dcol{color:var(--rosa)}}
+:root[data-theme=dark] .dcol{color:var(--rosa)}
+.dinfo h2{font-size:clamp(28px,3.4vw,36px)}
+.dinfo p{margin:0;color:var(--soft)}
+.lbl{font-size:13px;font-weight:700;color:var(--soft);margin-bottom:6px}
 .vers{display:flex;flex-wrap:wrap;gap:6px}
-.vers button{font:600 13px Figtree,sans-serif;color:var(--soft);background:var(--chip);border:1px solid transparent;border-radius:999px;padding:0 12px;min-height:36px;cursor:pointer}
+.vers button{font:600 13px Figtree,sans-serif;color:var(--soft);background:var(--chip);border:1px solid transparent;border-radius:999px;padding:0 12px;min-height:38px;cursor:pointer}
 .vers button[aria-pressed=true]{color:var(--vinho);border-color:var(--vinho);background:transparent}
-.buy{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.price{white-space:nowrap}
-.price s{color:var(--soft);font-size:14px;margin-right:6px}
-.price b{font-size:24px}
-.wa{display:inline-flex;align-items:center;gap:8px;background:#1f8f4e;color:#fff;text-decoration:none;font-weight:700;font-size:15px;border-radius:12px;padding:0 16px;min-height:46px;white-space:nowrap}
-.wa:hover{background:#187a41}
-.wa svg{width:20px;height:20px;flex:none}
-button:focus-visible,a:focus-visible{outline:3px solid var(--rosa);outline-offset:2px}
+.models{display:grid;gap:8px}
+.models button{display:flex;justify-content:space-between;align-items:center;gap:10px;text-align:left;min-height:52px;padding:8px 14px;border-radius:12px;border:1.5px solid var(--line);background:transparent;color:var(--ink);font:500 15px Figtree,sans-serif;cursor:pointer}
+.models button small{display:block;color:var(--soft);font-size:12.5px}
+.models button span:last-child{white-space:nowrap;text-align:right}
+.models button s{color:var(--soft);font-size:13px;margin-right:4px}
+.models button b{font-size:17px}
+.models button[aria-pressed=true]{border-color:var(--vinho);background:var(--rosa-claro);color:var(--vinho2)}
+.models button[aria-pressed=true] small,.models button[aria-pressed=true] s{color:#6e5560}
+.qtyrow{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.qty button{width:44px;height:44px;border:0;background:var(--chip);color:var(--ink);font-size:20px;cursor:pointer}
+.qty output{min-width:40px;text-align:center;font-weight:700}
+.total{font-size:14px;color:var(--soft)}.total b{font-size:24px;color:var(--ink)}
+.dacts{display:grid;gap:8px;margin-top:auto}
+.dacts .btn{width:100%}
+.share{background:none;border:0;color:var(--soft);font:600 14px Figtree,sans-serif;text-decoration:underline;cursor:pointer;min-height:40px}
+.hint{font-size:13px;color:var(--soft);text-align:center;margin:0}
 
-/* faça a sua */
-.own{background:var(--rosa-claro);color:#2a1119;border-color:transparent}
-.own .ph{background:var(--vinho);display:grid;place-items:center}
-.own .ph svg{width:62%;height:auto}
-.own .body p{color:#6e5560}
-.own .opts button{color:#2a1119;border-color:#f2c3d1}
-.own .opts button[aria-pressed=true]{background:#fff}
-.own .price s{color:#6e5560}
+/* pedido */
+.cart ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.cart li{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:12px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:10px}
+.cart li img,.cart li .ownmini{width:64px;height:57px;border-radius:10px;object-fit:cover;background:var(--vinho)}
+.cart li b{display:block;font-size:15px;line-height:1.25}
+.cart li small{color:var(--soft);font-size:13px}
+.cart li .rm{border:0;background:none;color:var(--soft);text-decoration:underline;font:600 13px Figtree,sans-serif;cursor:pointer;min-height:36px;padding:0}
+.cart .qty button{width:36px;height:36px}
+.cart .qty output{min-width:28px}
+.cartbox{padding:24px 22px 20px;display:flex;flex-direction:column;gap:16px;max-height:100dvh;overflow:auto}
+.cartbox h2{font-size:34px}
 
-/* como pedir */
+/* botões flutuantes */
+.float{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:30;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.fwa{width:58px;height:58px;border-radius:50%;background:var(--verde);color:#fff;display:grid;place-items:center;box-shadow:0 10px 24px -6px rgba(0,0,0,.45)}
+.fwa svg{width:30px;height:30px}
+.fwa:hover{background:var(--verde2)}
+.cartbar{position:fixed;left:50%;translate:-50% 0;bottom:calc(14px + env(safe-area-inset-bottom));z-index:31;width:min(560px,calc(100% - 32px));display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--vinho2);color:#fff;border:0;border-radius:16px;padding:10px 10px 10px 16px;box-shadow:0 16px 34px -10px rgba(0,0,0,.55);font:inherit;cursor:pointer;text-align:left}
+.cartbar[hidden]{display:none}
+.cartbar b{display:block;font-size:16px}.cartbar small{opacity:.8;font-size:13px}
+.cartbar span.go{background:var(--verde);border-radius:12px;padding:0 14px;min-height:44px;display:inline-flex;align-items:center;gap:6px;font-weight:700;white-space:nowrap}
+body.hascart .fwa{display:none}
+body.hascart footer{padding-bottom:110px}
+.toast{position:fixed;left:50%;bottom:96px;translate:-50% 20px;opacity:0;background:#16090e;color:#fff;padding:12px 18px;border-radius:12px;font-weight:600;z-index:40;transition:.25s;pointer-events:none;max-width:calc(100% - 32px);text-align:center}
+.toast.on{opacity:1;translate:-50% 0}
+
+/* como pedir e dúvidas */
 .how{background:var(--chip);padding-block:clamp(32px,5vw,56px)}
 .how h2{font-size:clamp(30px,4vw,40px);margin-bottom:20px}
 .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;list-style:none;margin:0;padding:0}
 .steps li{border-top:2px solid var(--vinho);padding-top:12px}
 .steps b{display:block;font-size:17px;margin-bottom:4px}
 .steps span{color:var(--soft);font-size:15px}
+.faq{margin-top:clamp(28px,4vw,44px);display:grid;gap:10px;max-width:780px}
+.faq h2{margin-bottom:8px}
+.faq details{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:0 16px}
+.faq summary{cursor:pointer;font-weight:600;min-height:52px;display:flex;align-items:center;list-style:none;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:22px;color:var(--vinho)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin:0 0 14px;color:var(--soft)}
 footer{background:var(--vinho2);color:#fff;padding-block:36px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center}
 footer p{margin:0;opacity:.85;font-size:15px}
+footer a{text-decoration:none}
 .note{font-size:13px;opacity:.7;margin-top:6px}
 
+@media(max-width:900px){.colrow{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:700px){
 .hero{grid-template-columns:1fr}
-.stage{order:-1;justify-self:center;width:84%;max-width:360px}
-.hero{text-align:left}
+.stage{order:-1;justify-self:center;width:72%;max-width:300px;gap:10px}
+.dtitle{font-size:22px}
 .steps{grid-template-columns:1fr}
+.ctas .btn{flex:1 1 auto}
+.dlg{grid-template-columns:1fr}
+dialog{border-radius:22px 22px 0 0;margin:auto auto 0;max-height:94dvh}
+.dinfo,.cartbox{max-height:none;padding:16px 16px 20px}
+dialog[open]{animation:up .28s cubic-bezier(.2,.8,.2,1)}
+.dlgwrap{max-height:94dvh;overflow:auto}
 }
-@media(prefers-reduced-motion:no-preference){.item{transition:transform .2s}.item:hover{transform:translateY(-3px)}}
+@media(max-width:460px){.colrow{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.colcard span{font-size:14px;padding:22px 8px 8px}.colcard small{font-size:12px}}
+@keyframes up{from{transform:translateY(40px);opacity:.4}}
+@media(prefers-reduced-motion:reduce){dialog[open]{animation:none}}
 </style>
 <!-- Contador de visitas (GoatCounter): painel em https://fscanecas.goatcounter.com -->
 <script data-goatcounter="https://fscanecas.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
@@ -132,13 +266,19 @@ footer p{margin:0;opacity:.85;font-size:15px}
 <header class="top">
   <div class="wrap bar">
     <a class="brand" href="#inicio" id="inicio"><span class="mono">FS</span><span><b>FS Personalização</b><small>Canecas sublimadas</small></span></a>
-    <a class="ig" href="https://instagram.com/fs.personalizacao">@fs.personalizacao</a>
+    <a class="ig" href="https://instagram.com/fs.personalizacao" target="_blank" rel="noopener"><span class="igl">@fs.personalizacao</span><span class="igs">Instagram</span></a>
   </div>
   <div class="wrap hero">
     <div>
+      <span class="eyebrow"><i></i><span id="eyebrow">Coleção de Natal no ar</span></span>
       <h1>Canecas que já chegam com <em>cara de presente</em></h1>
       <p>Escolha a estampa, escolha o modelo da caneca e chame no WhatsApp. A gente confirma tudo com você antes de produzir.</p>
+      <div class="ctas">
+        <a class="btn btn-rosa" href="#catalogo" data-go="natal">Ver canecas de Natal</a>
+        <a class="btn btn-out" href="#catalogo" data-go="todas">Ver todo o catálogo</a>
+      </div>
       <div class="types" id="types"></div>
+      <ul class="trust"><li>Você aprova a arte antes</li><li>Nome ou frase do seu jeito</li><li>Atendimento direto no WhatsApp</li></ul>
     </div>
     <div class="stage">
       <h2 class="dtitle">Algumas de nossas artes</h2>
@@ -155,21 +295,42 @@ footer p{margin:0;opacity:.85;font-size:15px}
   </div>
 </section>
 
+<section class="wrap cols" aria-labelledby="colsT">
+  <h2 id="colsT">Escolha por coleção</h2>
+  <div class="colrow" id="colrow"></div>
+</section>
+
 <main class="wrap shelf" id="catalogo">
   <h2>Catálogo</h2>
-  <p class="lead">Toda estampa pode ser feita em qualquer um dos três modelos. Toque no modelo para ver o preço.</p>
-  <div class="filters" role="toolbar" aria-label="Filtrar por coleção" id="filters"></div>
+  <p class="lead">Toda estampa pode ser feita em qualquer um dos três modelos. Toque na caneca para ver maior, escolher o modelo e pedir.</p>
+  <div class="tools" id="tools">
+    <label class="search"><span class="sr">Buscar caneca</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Buscar: papai noel, café, flamengo…" autocomplete="off" enterkeyhint="search">
+      <button type="button" class="clear" id="qClear" aria-label="Limpar busca" hidden>×</button>
+    </label>
+    <div class="filters" role="toolbar" aria-label="Filtrar por coleção" id="filters"></div>
+  </div>
+  <p class="count" id="count" aria-live="polite"></p>
   <div class="grid" id="grid"></div>
+  <div class="more"><button type="button" class="btn btn-soft" id="more" hidden>Mostrar mais canecas</button></div>
 </main>
 
-<section class="how">
+<section class="how" id="como">
   <div class="wrap">
     <h2>Como pedir</h2>
     <ol class="steps">
-      <li><b>Escolha a estampa e o modelo</b><span>Branca, alça de coração ou mágica.</span></li>
-      <li><b>Toque em Pedir no WhatsApp</b><span>A mensagem já vai com o nome da caneca e o preço.</span></li>
+      <li><b>Escolha a estampa e o modelo</b><span>Branca, alça de coração ou mágica. Pode juntar várias canecas no mesmo pedido.</span></li>
+      <li><b>Toque em Pedir no WhatsApp</b><span>A mensagem já vai com o nome da caneca, o modelo e o preço.</span></li>
       <li><b>Combine os detalhes</b><span>Nome, frase, quantidade, prazo e entrega, direto com a gente.</span></li>
     </ol>
+    <div class="faq">
+      <h2>Dúvidas</h2>
+      <details><summary>Posso colocar nome, foto ou frase?</summary><p>Pode. Qualquer estampa pode levar nome ou frase, e você também pode pedir uma caneca só com a sua foto. A gente monta a arte e manda para você aprovar antes de produzir.</p></details>
+      <details><summary>Qual a diferença entre os modelos?</summary><p>A branca tradicional é a caneca clássica. A de alça de coração tem a alça em formato de coração. A mágica é escura e a estampa aparece quando você coloca bebida quente.</p></details>
+      <details><summary>Não achei a estampa que eu queria. E agora?</summary><p>Chama no WhatsApp e conta a ideia. Dá para adaptar uma arte do catálogo ou criar uma nova.</p></details>
+      <details><summary>Como funciona prazo e entrega?</summary><p>O prazo e a forma de entrega são combinados direto no WhatsApp, de acordo com a quantidade e a sua cidade.</p></details>
+    </div>
   </div>
 </section>
 
@@ -177,28 +338,73 @@ footer p{margin:0;opacity:.85;font-size:15px}
   <div class="wrap">
     <div>
       <p><b>FS Personalização</b></p>
-      <p>WhatsApp (47) 98419-6261 · Instagram @fs.personalizacao</p>
+      <p><a href="https://wa.me/5547984196261" id="waTxt">WhatsApp (47) 98419-6261</a> · <a href="https://instagram.com/fs.personalizacao" target="_blank" rel="noopener">Instagram @fs.personalizacao</a></p>
       <p class="note">Fotos ilustrativas. Cores podem variar um pouco de tela para tela.</p>
     </div>
-    <a class="wa" id="waFooter" href="https://wa.me/5547984196261">Falar no WhatsApp</a>
+    <a class="btn btn-wa" id="waFooter" href="https://wa.me/5547984196261" target="_blank" rel="noopener">Falar no WhatsApp</a>
   </div>
 </footer>
+
+<div class="float"><a class="fwa" id="waFloat" href="https://wa.me/5547984196261" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"></a></div>
+<button type="button" class="cartbar" id="cartbar" hidden><span><b id="cbTitle"></b><small id="cbSub"></small></span><span class="go">Ver pedido ›</span></button>
+<div class="toast" id="toast" role="status"></div>
+
+<dialog id="dlg" aria-labelledby="dName">
+  <div class="dlgwrap">
+  <button type="button" class="dclose" data-close aria-label="Fechar">×</button>
+  <div class="dlg">
+    <div class="dimg"><img id="dImg" alt="" width="640" height="571"><button type="button" class="dnav p" id="dP" aria-label="Caneca anterior">‹</button><button type="button" class="dnav n" id="dN" aria-label="Próxima caneca">›</button></div>
+    <div class="dinfo">
+      <div><div class="dcol" id="dCol"></div><h2 id="dName"></h2></div>
+      <p id="dDesc"></p>
+      <div id="dVersW"><div class="lbl">Versão da arte</div><div class="vers" id="dVers" role="group" aria-label="Versão da arte"></div></div>
+      <div><div class="lbl">Modelo da caneca</div><div class="models" id="dModels" role="group" aria-label="Modelo da caneca"></div></div>
+      <div class="qtyrow"><div class="qty" aria-label="Quantidade"><button type="button" id="qMinus" aria-label="Menos uma">−</button><output id="qVal">1</output><button type="button" id="qPlus" aria-label="Mais uma">+</button></div><div class="total">Total <b id="dTotal"></b></div></div>
+      <div class="dacts">
+        <a class="btn btn-wa" id="dWa" target="_blank" rel="noopener"></a>
+        <button type="button" class="btn btn-soft" id="dAdd">+ Adicionar ao pedido e continuar olhando</button>
+        <button type="button" class="share" id="dShare">Copiar link desta caneca</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</dialog>
+
+<dialog id="cartDlg" aria-labelledby="cartT">
+  <div class="dlgwrap">
+  <button type="button" class="dclose" data-close aria-label="Fechar">×</button>
+  <div class="cartbox cart">
+    <h2 id="cartT">Seu pedido</h2>
+    <ul id="cartList"></ul>
+    <div class="qtyrow"><span class="total">Total estimado</span><b id="cartTotal" style="font-size:24px"></b></div>
+    <p class="hint">Combos, frete e prazo são confirmados no WhatsApp.</p>
+    <div class="dacts">
+      <a class="btn btn-wa" id="cartSend" target="_blank" rel="noopener"></a>
+      <button type="button" class="btn btn-soft" data-close>Continuar escolhendo</button>
+      <button type="button" class="share" id="cartClear">Esvaziar pedido</button>
+    </div>
+  </div>
+  </div>
+</dialog>
 
 <script>
 {
 /* ====== EDITE AQUI ======
-   Black Friday: troque para false quando acabar a promoção
-   (a faixa de oferta some sozinha). */
+   Black Friday: a faixa e os preços com desconto somem sozinhos
+   depois da data de BLACK_FRIDAY_ATE. Para tirar antes, troque para false. */
 const BLACK_FRIDAY = true;
+const BLACK_FRIDAY_ATE = "2026-11-29";
+/* Coleção que aparece primeiro e em destaque */
+const DESTAQUE = "natal";
 const WHATS = "5547984196261";
 
 const TYPES = [
-  {id:"branca",  nome:"Branca tradicional", curto:"Branca",          preco:39.90, bf:29.90},
-  {id:"coracao", nome:"Alça de coração",    curto:"Alça de coração", preco:49.90, bf:39.90},
-  {id:"magica",  nome:"Mágica",             curto:"Mágica",          preco:59.90, bf:49.90}
+  {id:"branca",  nome:"Branca tradicional", curto:"Branca",          preco:39.90, bf:29.90, info:"A clássica"},
+  {id:"coracao", nome:"Alça de coração",    curto:"Alça de coração", preco:49.90, bf:39.90, info:"Alça em formato de coração"},
+  {id:"magica",  nome:"Mágica",             curto:"Mágica",          preco:59.90, bf:49.90, info:"A estampa aparece com bebida quente"}
 ];
 
-const COLS = {amor:"Amor", cafe:"Café e humor", times:"Times", diversos:"Diversos", natal:"Natal", sua:"Faça a sua"};
+const COLS = {natal:"Natal", amor:"Amor", cafe:"Café e humor", times:"Times", diversos:"Diversos", sua:"Faça a sua"};
 
 const ITEMS = [
   {col:"amor", img:"img/amor1.jpg", nome:"Amor para a vida toda", desc:"Casalzinho abraçado em tons de rosa e azul. Presente certeiro para namorado ou namorada."},
@@ -325,105 +531,260 @@ const ITEMS = [
   {col:"natal", img:"img/n4-63.jpg", nome:"Três Reis Magos", desc:"Caneca de Natal com arte completa em volta."},
   {col:"sua", own:true, nome:"Sua foto, nome ou frase", desc:"Manda a foto, o nome ou a frase que você quer e a gente monta a arte para você aprovar antes."}
 ];
+/* Artes do topo (o carrossel de arrastar). O nome tem que ser igual ao do catálogo. */
+const DECK = [
+  {img:"img/natal4.jpg", nome:"Brinde Dourado"},
+  {img:"img/n4-20.jpg", nome:"Sobrevivi ao ano"},
+  {img:"img/hero.jpg", nome:"Eu quero morar no teu abraço"},
+  {img:"img/n4-07.jpg", nome:"Então é Natal, fiz o que deu"},
+  {img:"img/times/flamengo-1.jpg", nome:"Flamengo"},
+  {img:"img/cafe1.jpg", nome:"Preciso é de café"},
+  {img:"img/n4-01.jpg", nome:"Um brinde à alegria"},
+  {img:"img/amor1.jpg", nome:"Amor para a vida toda"},
+  {img:"img/times/palmeiras-1.jpg", nome:"Palmeiras"},
+  {img:"img/cafe5.jpg", nome:"Expectativa e realidade"}
+];
 /* ====== FIM DA EDIÇÃO ====== */
 
 const brl = v => "R$ " + v.toFixed(2).replace(".", ",");
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-if (!BLACK_FRIDAY) document.getElementById("bf").remove();
-const now = t => BLACK_FRIDAY ? t.bf : t.preco;
-const waIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>';
+const norm = s => String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+const $ = id => document.getElementById(id);
+const BF = BLACK_FRIDAY && Date.now() <= new Date(BLACK_FRIDAY_ATE + "T23:59:59").getTime();
+if (!BF) $("bf").remove();
+const now = t => BF ? t.bf : t.preco;
+const waIcon = '<svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>';
 const ownArt = '<svg viewBox="0 0 200 160" aria-hidden="true"><rect x="30" y="30" width="110" height="110" rx="10" fill="#fff"/><path d="M140 55h14a22 22 0 0 1 0 44h-14" fill="none" stroke="#fff" stroke-width="12"/><rect x="44" y="46" width="82" height="58" rx="6" fill="#f08aa8"/><circle cx="66" cy="66" r="8" fill="#fde3ea"/><path d="M48 100l24-22 16 14 14-10 20 18z" fill="#6b1838" opacity=".8"/><rect x="50" y="114" width="70" height="8" rx="4" fill="#f08aa8"/></svg>';
-
-const msg = (it, t) => it.own
-  ? `Olá! Vi o catálogo e quero uma caneca personalizada (${t.nome}, ${brl(now(t))}). Posso te mandar a foto/frase?`
-  : `Olá! Vi o catálogo e quero a caneca *${it.nome}*${it.imgs && it.imgs.length > 1 ? ` (versão ${(it.v || 0) + 1})` : ""} no modelo ${t.nome} (${brl(now(t))}).`;
-const link = (it, t) => `https://wa.me/${WHATS}?text=${encodeURIComponent(msg(it, t))}`;
-const priceHtml = t => (BLACK_FRIDAY ? `<s>${brl(t.preco)}</s>` : "") + `<b>${brl(now(t))}</b>`;
-
-document.getElementById("types").innerHTML = TYPES.map(t =>
-  `<span>${esc(t.nome)}<b>${BLACK_FRIDAY ? `<s>${brl(t.preco)}</s>` : ""}${brl(now(t))}</b></span>`).join("");
-
-document.getElementById("waFooter").href = `https://wa.me/${WHATS}?text=${encodeURIComponent("Olá! Vi o catálogo da FS e queria tirar uma dúvida.")}`;
+const thumb = p => "img/t/" + p.slice(4).replace(/\.jpg$/, ".webp");
+const imgOf = (it, v) => it.imgs ? it.imgs[v || 0] : it.img;
+const wa = text => `https://wa.me/${WHATS}?text=${encodeURIComponent(text)}`;
 
 /* Conta cliques no painel do GoatCounter (aparecem como eventos) */
 const track = (path, title) => { try { if (window.goatcounter && goatcounter.count) goatcounter.count({path, title: title || path, event: true}); } catch (_) {} };
-document.getElementById("waFooter").addEventListener("click", () => track("WhatsApp - rodapé (dúvida)"));
 
-const grid = document.getElementById("grid");
-grid.innerHTML = ITEMS.map((it, i) => `
-  <article class="item${it.own ? " own" : ""}" data-col="${it.col}" data-i="${i}">
-    <div class="ph">${it.own ? ownArt : `<img src="${it.imgs ? it.imgs[0] : it.img}" alt="Caneca ${esc(it.nome)}" loading="lazy" width="640" height="571">`}${it.tag ? `<span class="tag">${esc(it.tag)}</span>` : ""}</div>
-    <div class="body">
-      <h3>${esc(it.nome)}</h3>
-      <p>${esc(it.desc)}</p>
-      ${it.imgs && it.imgs.length > 1 ? `<div class="vers" role="group" aria-label="Versão da arte">${it.imgs.map((u, k) =>
-        `<button type="button" data-v="${k}" aria-pressed="${k === 0}">Versão ${k + 1}</button>`).join("")}</div>` : ""}
-      <div class="opts" role="group" aria-label="Modelo da caneca">${TYPES.map((t, k) =>
-        `<button type="button" data-t="${k}" aria-pressed="${k === 0}">${esc(t.curto)}</button>`).join("")}</div>
-      <div class="buy"><span class="price">${priceHtml(TYPES[0])}</span>
-        <a class="wa" href="${link(it, TYPES[0])}" target="_blank" rel="noopener">${waIcon}Pedir no WhatsApp</a></div>
-    </div>
-  </article>`).join("");
-
-grid.addEventListener("click", e => {
-  const w = e.target.closest(".wa");
-  if (w) {
-    const card = w.closest(".item"), it = ITEMS[+card.dataset.i];
-    const sel = card.querySelector(".opts button[aria-pressed=true]"), t = TYPES[sel ? +sel.dataset.t : 0];
-    track(`WhatsApp - ${it.nome}${it.imgs && it.imgs.length > 1 ? ` (versão ${(it.v || 0) + 1})` : ""}`, `${COLS[it.col] || it.col} · modelo ${t.curto}`);
-    return;
-  }
-  const v = e.target.closest(".vers button");
-  if (v) {
-    const card = v.closest(".item"), it = ITEMS[+card.dataset.i];
-    it.v = +v.dataset.v;
-    card.querySelectorAll(".vers button").forEach(x => x.setAttribute("aria-pressed", x === v));
-    card.querySelector(".ph img").src = it.imgs[it.v];
-    const sel = card.querySelector(".opts button[aria-pressed=true]");
-    card.querySelector(".wa").href = link(it, TYPES[+sel.dataset.t]);
-    return;
-  }
-  const b = e.target.closest(".opts button"); if (!b) return;
-  const card = b.closest(".item"), it = ITEMS[+card.dataset.i], t = TYPES[+b.dataset.t];
-  card.querySelectorAll(".opts button").forEach(x => x.setAttribute("aria-pressed", x === b));
-  card.querySelector(".price").innerHTML = priceHtml(t);
-  card.querySelector(".wa").href = link(it, t);
+/* ordem: coleção em destaque primeiro */
+const ORDER = [DESTAQUE, ...Object.keys(COLS).filter(k => k !== DESTAQUE)];
+const LIST = ITEMS.map((it, i) => ({...it, i})).sort((a, b) => ORDER.indexOf(a.col) - ORDER.indexOf(b.col) || a.i - b.i);
+const used = {};
+LIST.forEach(it => {
+  let s = norm(it.nome).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "caneca";
+  if (used[s]) s += "-" + (++used[s]); else used[s] = 1;
+  it.slug = s;
+  it.hay = norm(`${it.nome} ${it.desc} ${COLS[it.col]}`);
 });
+const nameV = (it, v) => `${it.nome}${it.imgs && it.imgs.length > 1 ? ` (versão ${(v || 0) + 1})` : ""}`;
+const counts = {}; LIST.forEach(it => counts[it.col] = (counts[it.col] || 0) + 1);
 
-const filters = document.getElementById("filters");
-const keys = ["todas", ...Object.keys(COLS)];
-filters.innerHTML = keys.map((k, i) =>
-  `<button type="button" data-f="${k}" aria-pressed="${i === 0}">${k === "todas" ? "Todas" : COLS[k]}</button>`).join("");
+$("types").innerHTML = TYPES.map(t =>
+  `<span>${esc(t.nome)}<b>${BF ? `<s>${brl(t.preco)}</s>` : ""}${brl(now(t))}</b></span>`).join("");
+$("eyebrow").textContent = `${counts.natal || 0} estampas de Natal no catálogo`;
+
+const helloMsg = "Olá! Vi o catálogo da FS e queria tirar uma dúvida.";
+["waFooter", "waTxt", "waFloat"].forEach(id => { $(id).href = wa(helloMsg); });
+$("waFloat").innerHTML = waIcon.replace('class="wa-ico"', '');
+$("waFooter").insertAdjacentHTML("afterbegin", waIcon);
+$("waFooter").addEventListener("click", () => track("WhatsApp - rodapé (dúvida)"));
+$("waTxt").addEventListener("click", () => track("WhatsApp - rodapé (dúvida)"));
+$("waFloat").addEventListener("click", () => track("WhatsApp - botão flutuante (dúvida)"));
+
+const toast = t => { const el = $("toast"); el.textContent = t; el.classList.add("on"); clearTimeout(toast.h); toast.h = setTimeout(() => el.classList.remove("on"), 2200); };
+
+/* ====== COLEÇÕES ====== */
+const COVER = {natal:"img/n4-20.jpg", amor:"img/amor1.jpg", cafe:"img/cafe1.jpg", times:"img/times/flamengo-1.jpg", diversos:"img/div-06.jpg"};
+$("colrow").innerHTML = ORDER.map(k => `<button type="button" class="colcard${k === DESTAQUE ? " natal" : ""}" data-go="${k}">${k === "sua" ? `<div class="own-bg">${ownArt}</div>` : `<img src="${thumb(COVER[k] || LIST.find(x => x.col === k).img || LIST.find(x => x.col === k).imgs[0])}" alt="" loading="lazy" width="480" height="428">`}<span>${esc(COLS[k])}<small>${k === "sua" ? "Com a sua foto" : `${counts[k]} ${counts[k] > 1 ? "modelos" : "modelo"}`}</small></span></button>`).join("");
+
+/* ====== CATÁLOGO ====== */
+const grid = $("grid"), filters = $("filters"), q = $("q");
+const PAGE = 24;
+let filter = "todas", term = "", shown = PAGE, view = LIST;
+filters.innerHTML = ["todas", ...ORDER].map(k =>
+  `<button type="button" data-f="${k}" aria-pressed="${k === filter}">${k === "todas" ? "Todas" : esc(COLS[k])} ${k === "sua" ? "" : `<small>${k === "todas" ? LIST.length : counts[k]}</small>`}</button>`).join("");
+
+const cardHtml = it => {
+  const n = it.imgs ? it.imgs.length : 1;
+  const t = TYPES[0];
+  return `<button type="button" class="item${it.own ? " own" : ""}" data-s="${it.slug}">
+    <div class="ph">${it.own ? ownArt : `<img src="${thumb(imgOf(it))}" alt="Caneca ${esc(it.nome)}" loading="lazy" decoding="async" width="480" height="428">`}${n > 1 ? `<span class="badge">${n} versões</span>` : ""}</div>
+    <div class="body"><h3>${esc(it.nome)}</h3>
+      <span class="from">a partir de ${BF ? `<s>${brl(t.preco)}</s>` : ""}<b>${brl(now(t))}</b></span>
+      <span class="see">${it.own ? "Quero a minha" : "Ver e pedir"}</span></div>
+  </button>`;
+};
+
+const render = () => {
+  const words = norm(term).split(/\s+/).filter(Boolean);
+  view = LIST.filter(it => (filter === "todas" || it.col === filter) && words.every(w => it.hay.includes(w)));
+  const list = view.slice(0, shown);
+  if (!view.length) {
+    grid.innerHTML = `<div class="empty" style="grid-column:1/-1"><b>Nenhuma caneca encontrada${term ? ` para “${esc(term)}”` : ""}</b><p>Mas a gente cria a arte para você. Conta a ideia no WhatsApp.</p><a class="btn btn-wa" href="${wa(`Olá! Procurei "${term}" no catálogo e não achei. Vocês conseguem fazer uma caneca assim?`)}" target="_blank" rel="noopener" data-track="WhatsApp - busca sem resultado">${waIcon}Pedir uma arte nova</a></div>`;
+  } else grid.innerHTML = list.map(cardHtml).join("");
+  $("count").textContent = view.length ? `Mostrando ${list.length} de ${view.length} ${view.length > 1 ? "canecas" : "caneca"}${filter !== "todas" ? ` em ${COLS[filter]}` : ""}${term ? ` para “${term}”` : ""}` : "";
+  $("more").hidden = shown >= view.length;
+  $("more").textContent = `Mostrar mais canecas (${view.length - list.length})`;
+};
+const setFilter = (f, scroll) => {
+  filter = f; shown = PAGE;
+  filters.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x.dataset.f === f));
+  const b = filters.querySelector(`[data-f="${f}"]`); if (b) b.scrollIntoView({block:"nearest", inline:"center"});
+  render();
+  if (scroll) $("catalogo").scrollIntoView();
+};
 filters.addEventListener("click", e => {
   const b = e.target.closest("button"); if (!b) return;
-  track(`Filtro - ${b.textContent}`);
-  filters.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
-  grid.querySelectorAll(".item").forEach(c => c.hidden = !(b.dataset.f === "todas" || c.dataset.col === b.dataset.f));
+  track(`Filtro - ${COLS[b.dataset.f] || "Todas"}`);
+  setFilter(b.dataset.f);
+});
+document.addEventListener("click", e => {
+  const g = e.target.closest("[data-go]"); if (!g) return;
+  e.preventDefault();
+  if (g.dataset.go !== "todas") track(`Filtro - ${COLS[g.dataset.go]}`);
+  term = ""; q.value = ""; $("qClear").hidden = true;
+  setFilter(g.dataset.go, true);
+});
+let qt, lastQ = "";
+q.addEventListener("input", () => {
+  term = q.value.trim(); shown = PAGE; $("qClear").hidden = !q.value; render();
+  clearTimeout(qt); qt = setTimeout(() => { if (term.length >= 3 && term !== lastQ) { lastQ = term; track(`Busca - ${norm(term)}`); } }, 1500);
+});
+q.addEventListener("keydown", e => { if (e.key === "Enter") q.blur(); });
+$("qClear").addEventListener("click", () => { q.value = ""; term = ""; $("qClear").hidden = true; render(); q.focus(); });
+$("more").addEventListener("click", () => { shown += PAGE; render(); });
+grid.addEventListener("click", e => {
+  const t = e.target.closest("[data-track]"); if (t) { track(t.dataset.track); return; }
+  const c = e.target.closest(".item"); if (c) openItem(LIST.find(x => x.slug === c.dataset.s));
+});
+const tools = $("tools");
+new IntersectionObserver(([en]) => tools.classList.toggle("stuck", !en.isIntersecting), {rootMargin: "-1px 0px 0px 0px", threshold: [1]}).observe($("count"));
+
+/* ====== JANELA DA CANECA ====== */
+const dlg = $("dlg");
+let cur = null, ver = 0, typ = 0, qty = 1;
+const sel = () => ({it: cur, t: TYPES[typ], v: ver, q: qty});
+const msgOne = ({it, t, v, q}) => it.own
+  ? `Olá! Vi o catálogo e quero ${q > 1 ? q + " canecas personalizadas" : "uma caneca personalizada"} (${t.nome}, ${brl(now(t))}${q > 1 ? " cada" : ""}). Posso te mandar a foto/frase?`
+  : `Olá! Vi o catálogo e quero ${q > 1 ? q + "x " : ""}a caneca *${nameV(it, v)}* no modelo ${t.nome} (${brl(now(t))}${q > 1 ? " cada" : ""}).\n${location.origin}${location.pathname}#caneca/${it.slug}`;
+const paintDlg = () => {
+  const it = cur, t = TYPES[typ];
+  $("dCol").textContent = COLS[it.col];
+  $("dName").textContent = it.nome;
+  $("dDesc").textContent = it.desc;
+  const box = dlg.querySelector(".dimg");
+  if (it.own) { box.querySelector("img").hidden = true; if (!box.querySelector("svg.o")) box.insertAdjacentHTML("afterbegin", ownArt.replace("<svg", '<svg class="o" style="width:62%;margin:auto;position:absolute;inset:0;height:100%"')); box.style.background = "var(--vinho)"; }
+  else {
+    box.style.background = ""; const o = box.querySelector("svg.o"); if (o) o.remove();
+    const im = $("dImg"), full = imgOf(it, ver);
+    im.hidden = false; im.alt = `Caneca ${it.nome}`;
+    if (im.dataset.full !== full) { im.src = thumb(full); im.dataset.full = full; const pre = new Image(); pre.onload = () => { if (im.dataset.full === full) im.src = full; }; pre.src = full; }
+  }
+  $("dVersW").hidden = !(it.imgs && it.imgs.length > 1);
+  $("dVers").innerHTML = it.imgs && it.imgs.length > 1 ? it.imgs.map((u, k) => `<button type="button" data-v="${k}" aria-pressed="${k === ver}">Versão ${k + 1}</button>`).join("") : "";
+  $("dModels").innerHTML = TYPES.map((x, k) => `<button type="button" data-t="${k}" aria-pressed="${k === typ}"><span>${esc(x.nome)}${x.info ? `<small>${esc(x.info)}</small>` : ""}</span><span>${BF ? `<s>${brl(x.preco)}</s>` : ""}<b>${brl(now(x))}</b></span></button>`).join("");
+  $("qVal").textContent = qty;
+  $("dTotal").textContent = brl(now(t) * qty);
+  $("dWa").innerHTML = `${waIcon}Pedir esta no WhatsApp`;
+  $("dWa").href = wa(cart.length ? msgCart([...cart, pack(sel())]) : msgOne(sel()));
+  $("dAdd").textContent = cart.length ? `+ Adicionar ao pedido (${cartCount()} ${cartCount() > 1 ? "canecas" : "caneca"} até agora)` : "+ Adicionar ao pedido e continuar olhando";
+  if (cart.length) $("dWa").innerHTML = `${waIcon}Pedir esta + o pedido no WhatsApp`;
+  const idx = view.indexOf(it);
+  $("dP").hidden = idx <= 0; $("dN").hidden = idx < 0 || idx >= view.length - 1;
+};
+const openItem = (it, fromHash) => {
+  if (!it) return;
+  cur = it; ver = 0; typ = 0; qty = 1;
+  paintDlg();
+  if (!dlg.open) dlg.showModal();
+  if (!fromHash) history.replaceState(null, "", `#caneca/${it.slug}`);
+  track(`Abriu - ${it.nome}`, COLS[it.col]);
+};
+const closeDlg = d => { d.close(); };
+dlg.addEventListener("close", () => { if (location.hash.startsWith("#caneca/")) history.replaceState(null, "", location.pathname + location.search); });
+document.querySelectorAll("dialog").forEach(d => {
+  d.addEventListener("click", e => { if (e.target === d || e.target.closest("[data-close]")) closeDlg(d); });
+});
+$("dVers").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { ver = +b.dataset.v; paintDlg(); } });
+$("dModels").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { typ = +b.dataset.t; paintDlg(); } });
+$("qMinus").addEventListener("click", () => { qty = Math.max(1, qty - 1); paintDlg(); });
+$("qPlus").addEventListener("click", () => { qty = Math.min(99, qty + 1); paintDlg(); });
+const step = d => { const i = view.indexOf(cur) + d; if (view[i]) openItem(view[i]); };
+$("dP").addEventListener("click", () => step(-1));
+$("dN").addEventListener("click", () => step(1));
+dlg.addEventListener("keydown", e => { if (e.target.tagName === "BUTTON" && e.target.closest(".models,.vers")) return; if (e.key === "ArrowRight") step(1); if (e.key === "ArrowLeft") step(-1); });
+let tsx = 0, tsy = 0;
+const dimg = dlg.querySelector(".dimg");
+dimg.addEventListener("touchstart", e => { tsx = e.touches[0].clientX; tsy = e.touches[0].clientY; }, {passive: true});
+dimg.addEventListener("touchend", e => { const dx = e.changedTouches[0].clientX - tsx, dy = e.changedTouches[0].clientY - tsy; if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) step(dx < 0 ? 1 : -1); });
+const trackOrder = p => track(`WhatsApp - ${nameV(p.it, p.v)}`, `${COLS[p.it.col] || p.it.col} · modelo ${p.t.curto}`);
+$("dWa").addEventListener("click", () => {
+  if (cart.length) { [...cart.map(unpack), sel()].forEach(trackOrder); track(`WhatsApp - pedido com ${cartCount() + qty} canecas`); }
+  else trackOrder(sel());
+});
+$("dShare").addEventListener("click", async () => {
+  const url = `${location.origin}${location.pathname}#caneca/${cur.slug}`;
+  track(`Compartilhou - ${cur.nome}`);
+  try { if (navigator.share && matchMedia("(pointer:coarse)").matches) { await navigator.share({title: `Caneca ${cur.nome} · FS Personalização`, url}); return; } } catch (_) { return; }
+  try { await navigator.clipboard.writeText(url); toast("Link copiado. É só colar no WhatsApp."); } catch (_) { prompt("Copie o link:", url); }
 });
 
+/* ====== PEDIDO COM VÁRIAS CANECAS ====== */
+const KEY = "fs-pedido";
+let cart = [];
+try { cart = JSON.parse(localStorage.getItem(KEY) || "[]").filter(p => LIST.some(x => x.slug === p.s) && TYPES[p.t]); } catch (_) { cart = []; }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(cart)); } catch (_) {} };
+const pack = ({it, t, v, q}) => ({s: it.slug, v, t: TYPES.indexOf(t), q});
+const unpack = p => ({it: LIST.find(x => x.slug === p.s), v: p.v, t: TYPES[p.t], q: p.q});
+const cartCount = () => cart.reduce((a, p) => a + p.q, 0);
+const sum = arr => arr.reduce((a, p) => a + now(TYPES[p.t]) * p.q, 0);
+const msgCart = arr => "Olá! Vi o catálogo e quero fazer este pedido:\n\n" +
+  arr.map(unpack).map(p => `• ${p.q}x ${p.it.own ? "Caneca personalizada (foto/frase)" : "*" + nameV(p.it, p.v) + "*"} · ${p.t.nome} · ${brl(now(p.t))}${p.q > 1 ? " cada" : ""}`).join("\n") +
+  `\n\nTotal estimado: ${brl(sum(arr))}`;
+const paintCart = () => {
+  const n = cartCount();
+  document.body.classList.toggle("hascart", n > 0);
+  $("cartbar").hidden = n === 0;
+  $("cbTitle").textContent = `Seu pedido: ${n} ${n > 1 ? "canecas" : "caneca"}`;
+  $("cbSub").textContent = `Total estimado ${brl(sum(cart))}`;
+  $("cartList").innerHTML = cart.map(unpack).map((p, k) => `<li>${p.it.own ? `<div class="ownmini"></div>` : `<img src="${thumb(imgOf(p.it, p.v))}" alt="">`}<div><b>${esc(nameV(p.it, p.v))}</b><small>${esc(p.t.nome)} · ${brl(now(p.t))}</small><br><button type="button" class="rm" data-rm="${k}">Remover</button></div><div class="qty"><button type="button" data-d="-1" data-k="${k}" aria-label="Menos uma">−</button><output>${p.q}</output><button type="button" data-d="1" data-k="${k}" aria-label="Mais uma">+</button></div></li>`).join("");
+  $("cartTotal").textContent = brl(sum(cart));
+  $("cartSend").innerHTML = `${waIcon}Enviar pedido no WhatsApp`;
+  $("cartSend").href = wa(msgCart(cart));
+};
+$("dAdd").addEventListener("click", () => {
+  const p = pack(sel());
+  const same = cart.find(x => x.s === p.s && x.v === p.v && x.t === p.t);
+  if (same) same.q += p.q; else cart.push(p);
+  save(); paintCart(); track(`Adicionou - ${nameV(cur, ver)}`);
+  dlg.close(); toast(`Adicionada ao pedido (${cartCount()} ${cartCount() > 1 ? "canecas" : "caneca"})`);
+});
+$("cartbar").addEventListener("click", () => { paintCart(); $("cartDlg").showModal(); });
+$("cartList").addEventListener("click", e => {
+  const r = e.target.closest("[data-rm]"), d = e.target.closest("[data-d]");
+  if (r) cart.splice(+r.dataset.rm, 1);
+  else if (d) { const p = cart[+d.dataset.k]; p.q = Math.max(1, Math.min(99, p.q + +d.dataset.d)); }
+  else return;
+  save(); paintCart(); if (!cart.length) $("cartDlg").close();
+});
+$("cartClear").addEventListener("click", () => { cart = []; save(); paintCart(); $("cartDlg").close(); });
+$("cartSend").addEventListener("click", () => { cart.map(unpack).forEach(trackOrder); track(`WhatsApp - pedido com ${cartCount()} canecas`); });
+paintCart();
+
+render();
+
+/* link direto para uma caneca: site/#caneca/nome-da-caneca */
+const fromHash = () => { const m = location.hash.match(/^#caneca\/(.+)$/); if (m) openItem(LIST.find(x => x.slug === decodeURIComponent(m[1])), true); };
+window.addEventListener("hashchange", fromHash);
+fromHash();
+
 /* ====== ARTES DO TOPO (arraste tipo Tinder) ====== */
-const DECK = [
-  {img:"img/hero.jpg", nome:"Eu quero morar no teu abraço"},
-  {img:"img/times/flamengo-1.jpg", nome:"Flamengo"},
-  {img:"img/cafe1.jpg", nome:"Preciso é de café"},
-  {img:"img/amor1.jpg", nome:"Amor para a vida toda"},
-  {img:"img/times/palmeiras-1.jpg", nome:"Palmeiras"},
-  {img:"img/cafe5.jpg", nome:"Expectativa e realidade"},
-  {img:"img/times/corinthians-1.jpg", nome:"Corinthians"},
-  {img:"img/amor5.jpg", nome:"Minha metade"},
-  {img:"img/natal4.jpg", nome:"Brinde Dourado"}
-];
-const deck = document.getElementById("deck");
-const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-let cur = 0;
-deck.innerHTML = `<div class="dend"><p>Gostou? Tem muito mais no catálogo.</p><a href="#catalogo" class="dbtn">Ver todas as canecas</a><button type="button" class="dagain" id="dAgain">Ver de novo</button></div>` +
-  DECK.map((d, i) => `<div class="card" data-i="${i}"><img src="${d.img}" alt="Caneca ${esc(d.nome)}" draggable="false"${i > 2 ? ' loading="lazy"' : ""}><span>${esc(d.nome)}</span></div>`).join("");
+const deck = $("deck");
+let dc = 0;
+deck.innerHTML = `<div class="dend"><p>Gostou? Tem muito mais no catálogo.</p><a href="#catalogo" class="btn btn-rosa" data-go="todas">Ver todas as canecas</a><button type="button" class="dagain" id="dAgain">Ver de novo</button></div>` +
+  DECK.map((d, i) => `<div class="card" data-i="${i}"><img src="${d.img}" alt="Caneca ${esc(d.nome)}" draggable="false"${i > 1 ? ' loading="lazy"' : ' fetchpriority="high"'} width="640" height="571"><span>${esc(d.nome)}</span></div>`).join("");
 const cards = [...deck.querySelectorAll(".card")];
 const tilt = [0, -4, 4, -2];
-const count = document.getElementById("dCount");
+const dCount = $("dCount");
 const layout = () => {
   cards.forEach((c, i) => {
-    const pos = i - cur;
+    const pos = i - dc;
     c.classList.remove("drag");
     c.style.zIndex = DECK.length - i + 1;
     c.setAttribute("aria-hidden", pos !== 0);
@@ -432,41 +793,42 @@ const layout = () => {
     c.style.opacity = pos < 3 ? 1 : 0;
     c.style.transform = pos === 0 ? "none" : `translateY(${pos * 10}px) scale(${1 - pos * .05}) rotate(${tilt[pos] || 0}deg)`;
   });
-  count.textContent = cur < DECK.length ? `${cur + 1} de ${DECK.length} · arraste pro lado` : "Fim das artes em destaque";
-  document.getElementById("dPrev").disabled = cur === 0;
-  document.getElementById("dNext").disabled = cur >= DECK.length;
+  dCount.textContent = dc < DECK.length ? `${dc + 1} de ${DECK.length}${innerWidth > 460 ? " · arraste pro lado" : ""}` : "Fim das artes em destaque";
+  $("dPrev").disabled = dc === 0;
+  $("dNext").disabled = dc >= DECK.length;
 };
 layout();
-const fling = dir => { if (cur >= DECK.length) return; cards[cur].dataset.dir = dir; cur++; layout(); };
-const back = () => { if (cur > 0) { cur--; layout(); } };
-document.getElementById("dAgain").addEventListener("click", () => { cur = 0; layout(); });
-let sx = 0, sy = 0, dx = 0, dragging = false, decided = false, horiz = false;
+const fling = dir => { if (dc >= DECK.length) return; cards[dc].dataset.dir = dir; dc++; layout(); };
+const back = () => { if (dc > 0) { dc--; layout(); } };
+$("dAgain").addEventListener("click", () => { dc = 0; layout(); });
+let sx = 0, sy = 0, dx = 0, dragging = false, decided = false, horiz = false, moved = false;
 deck.addEventListener("pointerdown", e => {
-  if (!e.target.closest(".card") || cur >= DECK.length) return;
-  sx = e.clientX; sy = e.clientY; dx = 0; dragging = true; decided = false; horiz = false;
+  if (!e.target.closest(".card") || dc >= DECK.length) return;
+  sx = e.clientX; sy = e.clientY; dx = 0; dragging = true; decided = false; horiz = false; moved = false;
 });
 deck.addEventListener("pointermove", e => {
   if (!dragging) return;
   const mx = e.clientX - sx, my = e.clientY - sy;
-  if (!decided && Math.hypot(mx, my) > 6) { decided = true; horiz = Math.abs(mx) > Math.abs(my); if (horiz) { try { deck.setPointerCapture(e.pointerId); } catch (_) {} } }
+  if (!decided && Math.hypot(mx, my) > 6) { decided = true; moved = true; horiz = Math.abs(mx) > Math.abs(my); if (horiz) { try { deck.setPointerCapture(e.pointerId); } catch (_) {} } }
   if (!horiz) return;
   dx = mx;
-  const top = cards[cur]; if (!top) return;
+  const top = cards[dc]; if (!top) return;
   top.classList.add("drag");
   top.style.transform = `translateX(${dx}px) rotate(${dx / 18}deg)`;
 });
 const end = () => {
   if (!dragging) return; dragging = false;
-  const top = cards[cur]; if (!top) return;
+  const top = cards[dc]; if (!top) return;
+  if (!moved) { const it = LIST.find(x => x.nome === DECK[dc].nome); if (it) openItem(it); return; }
   if (horiz && Math.abs(dx) > deck.clientWidth * .25) fling(Math.sign(dx));
   else { top.classList.remove("drag"); top.style.transform = "none"; }
 };
 deck.addEventListener("pointerup", end);
-deck.addEventListener("pointercancel", end);
-document.getElementById("dNext").addEventListener("click", () => fling(1));
-document.getElementById("dPrev").addEventListener("click", back);
+deck.addEventListener("pointercancel", () => { moved = true; end(); });
+$("dNext").addEventListener("click", () => fling(1));
+$("dPrev").addEventListener("click", back);
 deck.tabIndex = 0;
-deck.addEventListener("keydown", e => { if (e.key === "ArrowRight") fling(1); if (e.key === "ArrowLeft") back(); });
+deck.addEventListener("keydown", e => { if (e.key === "ArrowRight") fling(1); if (e.key === "ArrowLeft") back(); if (e.key === "Enter" && dc < DECK.length) { const it = LIST.find(x => x.nome === DECK[dc].nome); if (it) openItem(it); } });
 }
 </script>
 </body>
