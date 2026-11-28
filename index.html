@@ -125,6 +125,8 @@ footer p{margin:0;opacity:.85;font-size:15px}
 }
 @media(prefers-reduced-motion:no-preference){.item{transition:transform .2s}.item:hover{transform:translateY(-3px)}}
 </style>
+<!-- Contador de visitas (GoatCounter): painel em https://fscanecas.goatcounter.com -->
+<script data-goatcounter="https://fscanecas.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 <header class="top">
@@ -343,6 +345,10 @@ document.getElementById("types").innerHTML = TYPES.map(t =>
 
 document.getElementById("waFooter").href = `https://wa.me/${WHATS}?text=${encodeURIComponent("Olá! Vi o catálogo da FS e queria tirar uma dúvida.")}`;
 
+/* Conta cliques no painel do GoatCounter (aparecem como eventos) */
+const track = (path, title) => { try { if (window.goatcounter && goatcounter.count) goatcounter.count({path, title: title || path, event: true}); } catch (_) {} };
+document.getElementById("waFooter").addEventListener("click", () => track("WhatsApp - rodapé (dúvida)"));
+
 const grid = document.getElementById("grid");
 grid.innerHTML = ITEMS.map((it, i) => `
   <article class="item${it.own ? " own" : ""}" data-col="${it.col}" data-i="${i}">
@@ -360,6 +366,13 @@ grid.innerHTML = ITEMS.map((it, i) => `
   </article>`).join("");
 
 grid.addEventListener("click", e => {
+  const w = e.target.closest(".wa");
+  if (w) {
+    const card = w.closest(".item"), it = ITEMS[+card.dataset.i];
+    const sel = card.querySelector(".opts button[aria-pressed=true]"), t = TYPES[sel ? +sel.dataset.t : 0];
+    track(`WhatsApp - ${it.nome}${it.imgs && it.imgs.length > 1 ? ` (versão ${(it.v || 0) + 1})` : ""}`, `${COLS[it.col] || it.col} · modelo ${t.curto}`);
+    return;
+  }
   const v = e.target.closest(".vers button");
   if (v) {
     const card = v.closest(".item"), it = ITEMS[+card.dataset.i];
@@ -383,6 +396,7 @@ filters.innerHTML = keys.map((k, i) =>
   `<button type="button" data-f="${k}" aria-pressed="${i === 0}">${k === "todas" ? "Todas" : COLS[k]}</button>`).join("");
 filters.addEventListener("click", e => {
   const b = e.target.closest("button"); if (!b) return;
+  track(`Filtro - ${b.textContent}`);
   filters.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
   grid.querySelectorAll(".item").forEach(c => c.hidden = !(b.dataset.f === "todas" || c.dataset.col === b.dataset.f));
 });
